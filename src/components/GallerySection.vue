@@ -38,6 +38,7 @@
           v-for="(item, i) in withPhoto"
           :key="'photo-' + item.year + '-' + i"
           :class="['gallery-item break-inside-avoid mb-5 relative block cursor-zoom-in', rotClasses[i % rotClasses.length]]"
+          @click="openLightbox(item, 'photo')"
         >
           <div class="g-polaroid bg-cream2 p-[8px_8px_32px] shadow-[2px_4px_14px_rgba(0,0,0,.7)] relative transition-[transform,box-shadow,z-index] duration-300">
             <div class="tape top"></div>
@@ -62,6 +63,7 @@
           v-for="(item, i) in logoOnly"
           :key="'logo-' + item.year + '-' + i"
           :class="['gallery-item break-inside-avoid mb-5 relative block cursor-zoom-in', rotClasses[i % rotClasses.length]]"
+          @click="openLightbox(item, 'logo')"
         >
           <div class="g-polaroid bg-cream2 p-[8px_8px_32px] shadow-[2px_4px_14px_rgba(0,0,0,.7)] relative transition-[transform,box-shadow,z-index] duration-300">
             <div class="tape top"></div>
@@ -104,10 +106,50 @@
       </div>
     </div>
   </section>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <Transition name="fade">
+    <div 
+      v-if="selectedImage" 
+      class="fixed inset-0 z-[9999] bg-black/95 flex flex-col items-center justify-center p-4 md:p-8 backdrop-blur-sm"
+      @click="closeLightbox"
+    >
+      <!-- Close Button -->
+      <button 
+        class="absolute top-4 right-4 md:top-6 md:right-6 text-cream/70 hover:text-white bg-black/40 hover:bg-black/70 p-2.5 rounded-full transition-colors cursor-pointer z-110 flex items-center justify-center border border-white/10"
+        aria-label="Close Preview"
+        @click.stop="closeLightbox"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Image Wrapper -->
+      <div class="relative max-w-full max-h-[75vh] md:max-h-[80vh] flex items-center justify-center" @click.stop>
+        <img 
+          :src="selectedImage.src" 
+          :alt="selectedImage.alt"
+          class="max-w-full max-h-[75vh] md:max-h-[80vh] object-contain rounded border border-white/10 shadow-2xl"
+          @error="e => e.target.src = `https://drive.google.com/thumbnail?id=${selectedImage.id}&sz=w1200`"
+        />
+      </div>
+
+      <!-- Caption -->
+      <div class="mt-6 text-center max-w-2xl px-4" @click.stop>
+        <span class="font-bang text-xl md:text-3xl text-orange tracking-wider block mb-1.5 [text-shadow:1px_1px_0_rgba(0,0,0,0.8)]">
+          ANGKATAN {{ selectedImage.year }}
+        </span>
+        <p class="font-hand text-base md:text-lg text-cream2/90 leading-relaxed italic">
+          {{ selectedImage.caption }}
+        </p>
+      </div>
+    </div>
+  </Transition>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed, watch, onUnmounted } from 'vue'
 import { angkatanData, rotClasses, driveImgUrl } from '../data.js'
 
 const props = defineProps({
@@ -122,6 +164,44 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['update:activeFilter'])
+
+// Lightbox state
+const selectedImage = ref(null)
+
+function openLightbox(item, type) {
+  const isPhoto = type === 'photo'
+  const id = isPhoto ? item.photoId : item.logoId
+  selectedImage.value = {
+    src: driveImgUrl(id, 1200),
+    alt: item.caption,
+    caption: item.caption,
+    year: item.year,
+    id: id
+  }
+}
+
+function closeLightbox() {
+  selectedImage.value = null
+}
+
+const onKeyDown = (e) => {
+  if (e.key === 'Escape') closeLightbox()
+}
+
+watch(selectedImage, (newVal) => {
+  if (newVal) {
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKeyDown)
+  } else {
+    document.body.style.overflow = ''
+    window.removeEventListener('keydown', onKeyDown)
+  }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', onKeyDown)
+  document.body.style.overflow = ''
+})
 
 const filters = computed(() => {
   return ['all', ...angkatanData.map(y => String(y.year))]
@@ -182,3 +262,15 @@ function onPhotoError(e, item) {
   e.target.parentElement.innerHTML = `<div class="g-photo-fallback w-full aspect-[4/3] flex flex-col items-center justify-center gap-1.5 bg-[#2a2010] text-tan font-hand text-[.75rem] text-center p-4">📷 Gambar tak termuat<br><a href="https://drive.google.com/file/d/${item.photoId}/view" target="_blank" class="text-orange2 underline">Buka di Drive ↗</a></div>`
 }
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

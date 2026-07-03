@@ -8,11 +8,11 @@
         <div class="relative rv-left">
           <div class="pushpin" style="top:-12px;left:50%;transform:translateX(-50%)"></div>
           <div class="bg-cream2 p-[12px_12px_50px] -rotate-3 shadow-[4px_8px_24px_rgba(0,0,0,.8),0_0_0_1px_rgba(0,0,0,.4)]">
-            <img src="https://lh3.googleusercontent.com/d/14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun=w900" alt="Angkatan 2024"
+            <img src="https://lh3.googleusercontent.com/d/14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun=w900" alt="Kreasi"
                  referrerpolicy="no-referrer"
                  class="w-full aspect-[4/3] object-cover sepia-[.4] contrast-[1.1]"
                  @error="e => e.target.src='https://drive.google.com/thumbnail?id=14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun&sz=w900'">
-            <div class="font-hand text-[1.1rem] text-[#3a2a10] text-center pt-2">Angkatan 2024</div>
+            <div class="font-hand text-[1.1rem] text-[#3a2a10] text-center pt-2">KREASI</div>
           </div>
 
           <div class="feat-secondary absolute -bottom-[30px] -right-[25px] bg-cream2 p-[6px_6px_30px] rotate-[8deg] shadow-[3px_6px_16px_rgba(0,0,0,.7)] w-[120px]">
@@ -44,7 +44,7 @@
             <p class="font-type text-[.82rem] text-[#3a2a10] leading-[1.95] mb-5">
               Sepuluh tahun, sebelas angkatan, satu identitas yang sama: KREASI. Setiap tahun datang dengan wajah barunya sendiri — logo baru, wajah-wajah baru, cerita baru — tapi rumahnya selalu sama.
               <br><br>
-              Dari angkatan 2016 hingga 2024, jejak yang tersimpan di Drive ini adalah bukti bahwa satu rumah bisa menampung sepuluh cerita yang berbeda, namun tetap menyatu jadi satu perjalanan panjang.
+              Dari angkatan 2015 hingga saat ini, jejak yang tersimpan ini adalah bukti bahwa satu rumah bisa menampung sepuluh cerita yang berbeda, namun tetap menyatu jadi satu perjalanan panjang.
             </p>
             <div class="border-l-[3px] border-red pl-3.5 font-hand text-[.88rem] text-[#5a3a10] italic leading-[1.6] mb-2">
               "Beda angkatan, beda logo, beda wajah — tapi tetap satu rumah yang sama."

@@ -1,7 +1,7 @@
 <template>
   <!-- NAV -->
   <nav id="nav" :class="{ on: navScrolled }" class="fixed inset-x-0 top-0 z-500 px-8 py-3.5 flex justify-between items-center transition-[background] duration-300">
-    <div><img src="/assets/logo/kreasi.png" alt="KREASI" class="md:w-20 w-12"></div>
+    <div><img src="/assets/logo/kreasi.png" alt="KREASI" class="md:w-14 w-8"></div>
     <ul class="nav-links list-none flex gap-8">
       <li><a href="#hero" class="font-bold text-[.72rem] tracking-[.18em] uppercase text-cream opacity-75 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">Beranda</a></li>
       <li><a href="#timeline" class="font-bold text-[.72rem] tracking-[.18em] uppercase text-cream opacity-75 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">Timeline</a></li>

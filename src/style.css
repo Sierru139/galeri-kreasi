@@ -55,7 +55,7 @@ body::before {
   z-index: 9998;
   pointer-events: none;
   opacity: .06;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); */
   background-size: 200px 200px;
 }
 
@@ -93,12 +93,29 @@ body::before {
   transform: none;
 }
 
-.d1 { transition-delay: .1s; }
-.d2 { transition-delay: .2s; }
-.d3 { transition-delay: .3s; }
-.d4 { transition-delay: .4s; }
-.d5 { transition-delay: .5s; }
-.d6 { transition-delay: .6s; }
+.d1 {
+  transition-delay: .1s;
+}
+
+.d2 {
+  transition-delay: .2s;
+}
+
+.d3 {
+  transition-delay: .3s;
+}
+
+.d4 {
+  transition-delay: .4s;
+}
+
+.d5 {
+  transition-delay: .5s;
+}
+
+.d6 {
+  transition-delay: .6s;
+}
 
 /* ── TAPE pseudo-element ── */
 .tape {
@@ -209,41 +226,31 @@ nav.on {
    HERO — custom CSS only
 ══════════════════════════ */
 #hero::before {
-  content: '';
+  /* content: '';
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: radial-gradient(ellipse 80% 80% at 50% 45%, #221800 0%, #0f0d08 65%);
+  background: radial-gradient(ellipse 80% 80% at 50% 45%, #221800 0%, #0f0d08 65%); */
 }
 
 .hero-lines {
-  position: absolute;
+  /* position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
   opacity: .04;
-  background-image: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(255, 255, 255, .8) 28px, rgba(255, 255, 255, .8) 29px);
-}
-
-.hero-kreasi::after {
-  content: 'KREASI';
-  position: absolute;
-  inset: 0;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, .07);
-  letter-spacing: .05em;
-  line-height: .9;
-  background: repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255, 255, 255, .03) 3px, rgba(255, 255, 255, .03) 4px);
-  -webkit-background-clip: text;
-  background-clip: text;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(255, 255, 255, .8) 28px, rgba(255, 255, 255, .8) 29px); */
 }
 
 /* ── Stars twinkle keyframe ── */
 @keyframes twinkle {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: .3;
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.3);
@@ -257,12 +264,47 @@ nav.on {
   animation: twinkle 3s ease-in-out infinite;
 }
 
-.hs1 { top: 12%; left: 8%; font-size: 1.2rem; animation-delay: 0s; }
-.hs2 { top: 18%; right: 11%; font-size: 1.6rem; animation-delay: .7s; }
-.hs3 { top: 58%; left: 7%; font-size: .9rem; animation-delay: 1.4s; }
-.hs4 { bottom: 22%; right: 9%; font-size: 1.4rem; animation-delay: .4s; }
-.hs5 { bottom: 30%; left: 20%; font-size: .8rem; animation-delay: 1.1s; }
-.hs6 { top: 40%; right: 7%; font-size: 1.1rem; animation-delay: 1.9s; }
+.hs1 {
+  top: 12%;
+  left: 8%;
+  font-size: 1.2rem;
+  animation-delay: 0s;
+}
+
+.hs2 {
+  top: 18%;
+  right: 11%;
+  font-size: 1.6rem;
+  animation-delay: .7s;
+}
+
+.hs3 {
+  top: 58%;
+  left: 7%;
+  font-size: .9rem;
+  animation-delay: 1.4s;
+}
+
+.hs4 {
+  bottom: 22%;
+  right: 9%;
+  font-size: 1.4rem;
+  animation-delay: .4s;
+}
+
+.hs5 {
+  bottom: 30%;
+  left: 20%;
+  font-size: .8rem;
+  animation-delay: 1.1s;
+}
+
+.hs6 {
+  top: 40%;
+  right: 7%;
+  font-size: 1.1rem;
+  animation-delay: 1.9s;
+}
 
 /* ── CTA button pseudo-element ── */
 .btn-cta::after {
@@ -292,9 +334,18 @@ nav.on {
   scrollbar-color: var(--color-dark-paper) transparent;
 }
 
-.tl-scroll::-webkit-scrollbar { height: 4px; }
-.tl-scroll::-webkit-scrollbar-track { background: transparent; }
-.tl-scroll::-webkit-scrollbar-thumb { background: var(--color-dark-paper); border-radius: 2px; }
+.tl-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tl-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tl-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-dark-paper);
+  border-radius: 2px;
+}
 
 /* ── Timeline connector lines (nth-child pseudo) ── */
 .tl-item::before {
@@ -419,12 +470,29 @@ nav.on {
 }
 
 /* ── Rotation classes ── */
-.gi-rot1 { transform: rotate(-3deg); }
-.gi-rot2 { transform: rotate(2deg); }
-.gi-rot3 { transform: rotate(-5deg); }
-.gi-rot4 { transform: rotate(4deg); }
-.gi-rot5 { transform: rotate(-1deg); }
-.gi-rot6 { transform: rotate(3deg); }
+.gi-rot1 {
+  transform: rotate(-3deg);
+}
+
+.gi-rot2 {
+  transform: rotate(2deg);
+}
+
+.gi-rot3 {
+  transform: rotate(-5deg);
+}
+
+.gi-rot4 {
+  transform: rotate(4deg);
+}
+
+.gi-rot5 {
+  transform: rotate(-1deg);
+}
+
+.gi-rot6 {
+  transform: rotate(3deg);
+}
 
 .gallery-item.gi-hidden {
   display: none;
@@ -480,9 +548,12 @@ nav.on {
    CLOSING — custom CSS only
 ══════════════════════════ */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-12px);
   }
@@ -497,10 +568,31 @@ nav.on {
   animation: float 4s ease-in-out infinite;
 }
 
-.cd1 { top: 30%; left: 5%; animation-delay: 0s; }
-.cd2 { bottom: 25%; right: 6%; animation-delay: 1.5s; }
-.cd3 { top: 60%; left: 22%; animation-delay: .8s; font-size: 1.5rem; }
-.cd4 { top: 40%; right: 18%; animation-delay: 2s; font-size: 1.8rem; }
+.cd1 {
+  top: 30%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.cd2 {
+  bottom: 25%;
+  right: 6%;
+  animation-delay: 1.5s;
+}
+
+.cd3 {
+  top: 60%;
+  left: 22%;
+  animation-delay: .8s;
+  font-size: 1.5rem;
+}
+
+.cd4 {
+  top: 40%;
+  right: 18%;
+  animation-delay: 2s;
+  font-size: 1.8rem;
+}
 
 /* ══════════════════════════
    RESPONSIVE
