@@ -1,54 +1,60 @@
 <template>
-  <section id="featured" style="background:var(--bg2)">
-    <div class="sec-container">
-      <div class="featured-label reveal">★ KENANGAN TERFAVORIT</div>
-      <div class="featured-grid">
+  <section id="featured" class="py-20 relative bg-bg2">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="featured-label inline-block bg-red text-cream2 font-bang text-[1.1rem] tracking-[.08em] py-1.5 px-3.5 -rotate-3 shadow-[3px_3px_0_#000] mb-10 relative reveal">★ KENANGAN TERFAVORIT</div>
+      <div class="featured-grid grid grid-cols-2 gap-12 items-start">
 
         <!-- Left: Image -->
-        <div class="feat-img-wrap rv-left">
+        <div class="relative rv-left">
           <div class="pushpin" style="top:-12px;left:50%;transform:translateX(-50%)"></div>
-          <div class="feat-polaroid">
+          <div class="bg-cream2 p-[12px_12px_50px] -rotate-3 shadow-[4px_8px_24px_rgba(0,0,0,.8),0_0_0_1px_rgba(0,0,0,.4)]">
             <img src="https://lh3.googleusercontent.com/d/14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun=w900" alt="Angkatan 2024"
                  referrerpolicy="no-referrer"
+                 class="w-full aspect-[4/3] object-cover sepia-[.4] contrast-[1.1]"
                  @error="e => e.target.src='https://drive.google.com/thumbnail?id=14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun&sz=w900'">
-            <div class="feat-caption">Angkatan 2024</div>
+            <div class="font-hand text-[1.1rem] text-[#3a2a10] text-center pt-2">Angkatan 2024</div>
           </div>
 
-          <div class="feat-secondary">
+          <div class="feat-secondary absolute -bottom-[30px] -right-[25px] bg-cream2 p-[6px_6px_30px] rotate-[8deg] shadow-[3px_6px_16px_rgba(0,0,0,.7)] w-[120px]">
             <div class="tape tl"></div>
             <img src="https://lh3.googleusercontent.com/d/1w7bVYUY0DOHG-Y33rba99MW12IzkxKcU=w300" alt="Angkatan 2016"
                  referrerpolicy="no-referrer"
+                 class="w-full aspect-square object-cover sepia-[.5]"
                  @error="e => e.target.src='https://drive.google.com/thumbnail?id=1w7bVYUY0DOHG-Y33rba99MW12IzkxKcU&sz=w300'">
-            <div class="caption">2016 ✨</div>
+            <div class="font-hand text-[.65rem] text-[#3a2a10] text-center pt-1">2016 ✨</div>
           </div>
         </div>
 
         <!-- Right: Notebook -->
         <div class="rv-right">
           <div class="notebook">
-            <div class="notebook-holes">
-              <div class="hole"></div><div class="hole"></div><div class="hole"></div>
-              <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+            <div class="absolute left-[14px] top-0 bottom-0 flex flex-col justify-evenly items-center w-5">
+              <div class="w-3.5 h-3.5 rounded-full bg-bg shadow-[inset_0_1px_3px_rgba(0,0,0,.5)]"></div>
+              <div class="w-3.5 h-3.5 rounded-full bg-bg shadow-[inset_0_1px_3px_rgba(0,0,0,.5)]"></div>
+              <div class="w-3.5 h-3.5 rounded-full bg-bg shadow-[inset_0_1px_3px_rgba(0,0,0,.5)]"></div>
+              <div class="w-3.5 h-3.5 rounded-full bg-bg shadow-[inset_0_1px_3px_rgba(0,0,0,.5)]"></div>
+              <div class="w-3.5 h-3.5 rounded-full bg-bg shadow-[inset_0_1px_3px_rgba(0,0,0,.5)]"></div>
+              <div class="w-3.5 h-3.5 rounded-full bg-bg shadow-[inset_0_1px_3px_rgba(0,0,0,.5)]"></div>
             </div>
-            <div class="notebook-tag">
+            <div class="notebook-tag font-type text-[.68rem] tracking-[.12em] uppercase text-[#6a4020] mb-1 flex items-center gap-1.5">
               KREASI SI — 2015 / 2025
-              <span class="feat-star">★</span>
+              <span class="text-red text-[.9rem]">★</span>
             </div>
-            <div class="notebook-title">Dari Angkatan<br>ke Angkatan</div>
-            <p class="notebook-body">
+            <div class="font-marker text-[clamp(1.4rem,3vw,1.9rem)] text-[#2a1200] leading-[1.25] mt-2 mb-4">Dari Angkatan<br>ke Angkatan</div>
+            <p class="font-type text-[.82rem] text-[#3a2a10] leading-[1.95] mb-5">
               Sepuluh tahun, sebelas angkatan, satu identitas yang sama: KREASI. Setiap tahun datang dengan wajah barunya sendiri — logo baru, wajah-wajah baru, cerita baru — tapi rumahnya selalu sama.
               <br><br>
               Dari angkatan 2016 hingga 2024, jejak yang tersimpan di Drive ini adalah bukti bahwa satu rumah bisa menampung sepuluh cerita yang berbeda, namun tetap menyatu jadi satu perjalanan panjang.
             </p>
-            <div class="notebook-quote">
+            <div class="border-l-[3px] border-red pl-3.5 font-hand text-[.88rem] text-[#5a3a10] italic leading-[1.6] mb-2">
               "Beda angkatan, beda logo, beda wajah — tapi tetap satu rumah yang sama."
             </div>
-            <div class="notebook-attribution">Catatan Tim KREASI SI</div>
+            <div class="notebook-attribution font-hand text-[.75rem] text-[#8a6040] pl-5">Catatan Tim KREASI SI</div>
           </div>
 
           <!-- Torn paper side note -->
-          <div style="margin-top:1.5rem;background:#a05828;padding:.75rem 1rem;transform:rotate(1deg);box-shadow:3px 3px 10px rgba(0,0,0,.5);max-width:280px;margin-left:auto">
-            <p style="font-family:var(--f-hand);font-size:.82rem;color:#f8e0b0;line-height:1.6">
+          <div class="mt-6 bg-[#a05828] py-3 px-4 rotate-1 shadow-[3px_3px_10px_rgba(0,0,0,.5)] max-w-[280px] ml-auto">
+            <p class="font-hand text-[.82rem] text-[#f8e0b0] leading-[1.6]">
               "Satu dekade, sebelas logo, satu cerita panjang yang sama."
             </p>
           </div>

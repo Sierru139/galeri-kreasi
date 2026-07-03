@@ -1,48 +1,50 @@
 <template>
-  <section id="generation">
-    <div class="sec-container" style="padding-top:3rem;padding-bottom:3rem;position:relative;z-index:2">
-      <div class="sec-head">
-        <div class="sec-eyebrow reveal">
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 7.3H20l-6.2 4.5 2.4 7.3L10 15.6 3.8 20l2.4-7.3L0 8.3h7.6z"/></svg>
+  <section id="generation" class="py-20 relative bg-bg2">
+    <div class="max-w-[1200px] mx-auto px-6 pt-12 pb-12 relative z-2">
+      <div class="mb-12">
+        <div class="font-hand text-[.9rem] text-orange tracking-[.1em] flex items-center gap-2 reveal">
+          <svg viewBox="0 0 20 20" fill="currentColor" class="w-[18px] h-[18px]"><path d="M10 1l2.4 7.3H20l-6.2 4.5 2.4 7.3L10 15.6 3.8 20l2.4-7.3L0 8.3h7.6z"/></svg>
           Pilih Tahun Angkatanmu
         </div>
-        <h2 class="sec-title reveal">PILIH <span>ANGKATAN</span></h2>
-        <p class="sec-sub reveal">Setiap angkatan punya logo dan wajahnya sendiri. Klik untuk lihat kenangannya.</p>
+        <h2 class="font-bang text-[clamp(2.2rem,7vw,4rem)] tracking-[.06em] leading-none text-cream2 [text-shadow:2px_2px_0_rgba(0,0,0,.8)] reveal">PILIH <span class="text-orange">ANGKATAN</span></h2>
+        <p class="font-hand text-[.9rem] text-tan opacity-80 mt-1.5 italic reveal">Setiap angkatan punya logo dan wajahnya sendiri. Klik untuk lihat kenangannya.</p>
       </div>
 
-      <div class="angkatan-grid">
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-4 relative z-2 max-w-[980px] mx-auto">
         <a
           v-for="y in angkatanData"
           :key="y.year"
           href="#gallery"
-          class="angkatan-card"
+          class="angkatan-card bg-paper py-5 px-3 pb-4 text-center cursor-pointer block border border-[rgba(0,0,0,.2)] shadow-[3px_3px_10px_rgba(0,0,0,.5)] transition-[transform,box-shadow] duration-[.25s] ease-in-out hover:-translate-y-1.5 hover:-rotate-1 hover:shadow-[5px_8px_20px_rgba(0,0,0,.7)]"
+          :class="{ 'bg-orange': false }"
           :data-year="y.year"
           @click.prevent="onCardClick(y.year)"
         >
-          <div class="angkatan-logo-circle">
+          <div class="w-14 h-14 rounded-full bg-white mx-auto mb-2.5 flex items-center justify-center overflow-hidden border-2 border-[rgba(0,0,0,.15)] shadow-[inset_0_0_0_1px_rgba(0,0,0,.05)]">
             <img
               :src="driveImgUrl(y.logo, 100)"
               :alt="'Logo ' + y.year"
               loading="lazy"
               referrerpolicy="no-referrer"
+              class="w-full h-full object-contain p-1"
               @error="e => e.target.src = `https://drive.google.com/thumbnail?id=${y.logo}&sz=w100`"
             >
           </div>
-          <div class="angkatan-year">{{ y.year }}</div>
-          <div class="angkatan-count">{{ y.photo ? 'Ada foto' : 'Logo saja' }}</div>
+          <div class="font-bold text-[1rem] tracking-[.08em] text-[#2a1800]">{{ y.year }}</div>
+          <div class="font-hand text-[.68rem] text-[#6a4a20] mt-0.5">{{ y.photo ? 'Ada foto' : 'Logo saja' }}</div>
         </a>
       </div>
 
-      <p class="reveal" style="font-family:var(--f-hand);font-size:.85rem;color:var(--tan);opacity:.65;text-align:center;margin-top:2rem">
+      <p class="reveal font-hand text-[.85rem] text-tan opacity-65 text-center mt-8">
         Galeri ini terhubung langsung ke folder "Kreasi SI 2015-2025" di Google Drive. 
       </p>
 
       <!-- Quote strips -->
-      <div style="display:flex;gap:1.5rem;margin-top:2.5rem;flex-wrap:wrap">
-        <div style="background:#8b1a0a;padding:.5rem 1rem;font-family:var(--f-hand);font-size:.85rem;color:#f8d0a0;transform:rotate(-2deg);box-shadow:2px 2px 8px rgba(0,0,0,.5)">
+      <div class="flex gap-6 mt-10 flex-wrap">
+        <div class="bg-[#8b1a0a] py-2 px-4 font-hand text-[.85rem] text-[#f8d0a0] -rotate-2 shadow-[2px_2px_8px_rgba(0,0,0,.5)]">
           Kenangan tidak harus sempurna,<br>yang penting nyata. ♥
         </div>
-        <div style="margin-left:auto;font-family:var(--f-hand);font-size:.85rem;color:var(--cream);opacity:.7;text-align:right;font-style:italic;align-self:center">
+        <div class="ml-auto font-hand text-[.85rem] text-cream opacity-70 text-right italic self-center">
           Bersama kita bisa,<br>bersama kita berarti.
         </div>
       </div>
