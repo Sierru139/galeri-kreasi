@@ -507,33 +507,19 @@ nav.on {
   margin-left: .5rem;
 }
 
+/* ── Hide scrollbar but keep scrollable ── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ══════════════════════════
-   FEATURED — custom CSS only
+   FEATURED / ABOUT — custom CSS only
 ══════════════════════════ */
-/* Notebook ruled-paper background (complex background-image) */
-.notebook {
-  background: #f8f0d8;
-  padding: 2rem 1.75rem 2rem 3.5rem;
-  position: relative;
-  box-shadow: 3px 5px 18px rgba(0, 0, 0, .5), 0 0 0 1px rgba(0, 0, 0, .2);
-  background-image:
-    linear-gradient(#f8f0d8 29px, #c8b890 30px),
-    linear-gradient(90deg, #e8935a 30px, transparent 30px);
-  background-size: 100% 30px, 100% 100%;
-  min-height: 320px;
-}
-
-.notebook::before {
-  content: '';
-  position: absolute;
-  left: 42px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #e8935a;
-  opacity: .6;
-}
-
 /* ── Notebook tag line pseudo-element ── */
 .notebook-tag::after {
   content: '';
@@ -601,18 +587,6 @@ nav.on {
    RESPONSIVE
 ══════════════════════════ */
 @media (max-width: 900px) {
-  .gallery-masonry {
-    columns: 2;
-  }
-
-  .featured-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .feat-secondary {
-    display: none;
-  }
-
   .cat-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -645,10 +619,6 @@ nav.on {
 }
 
 @media (max-width: 600px) {
-  .gallery-masonry {
-    columns: 2;
-  }
-
   .cat-grid {
     grid-template-columns: 1fr 1fr;
   }

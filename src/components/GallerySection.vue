@@ -12,7 +12,7 @@
       <p class="font-hand text-[1rem] text-tan italic text-center mb-8 reveal">Setiap foto menyimpan ribuan kata yang tak pernah terucap...</p>
 
       <!-- Filter bar -->
-      <div class="flex gap-2.5 justify-center flex-wrap mb-8 reveal">
+      <div class="flex gap-2.5 justify-start sm:justify-center flex-nowrap sm:flex-wrap overflow-x-auto pb-2 mb-8 reveal -mx-6 px-6 sm:mx-0 sm:px-0 scrollbar-hide">
         <button
           v-for="f in filters"
           :key="f"
@@ -32,7 +32,7 @@
         Sinkronisasi... 
       </div>
 
-      <div v-else class="gallery-masonry grid grid-cols-4 gap-x-5 reveal">
+      <div v-else class="gallery-masonry grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-5 reveal">
         <div
           v-for="(item, i) in galleryItems"
           :key="item.type + '-' + item.year + '-' + i"
