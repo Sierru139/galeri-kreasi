@@ -30,7 +30,7 @@
       <div><img src="/assets/logo/kreasi.png" alt="" class="w-80"></div>
       <div class="font-bold text-[clamp(.85rem,4vw,1.4rem)] tracking-[.22em] uppercase text-cream opacity-90 mt-4 mb-2 border-t border-b border-[rgba(176,128,60,.3)] py-2 px-8 inline-block">1 Dekade, 1 Rumah, 1 Cerita</div>
       <p class="font-hand text-[clamp(.8rem,2.5vw,1rem)] text-cream opacity-65 max-w-[460px] mx-auto mt-3.5 mb-7 leading-[1.75]">Sepuluh tahun perjalanan penuh makna, tawa, lelah, perjuangan, kebersamaan, dan ribuan kenangan yang membentuk kita menjadi satu keluarga.</p>
-      <a href="#timeline" class="inline-block py-3.5 px-10 bg-red text-cream font-bold text-[.88rem] tracking-[.18em] uppercase border-2 border-black shadow-[4px_4px_0_#000] transition-[transform,box-shadow,background] duration-200 relative hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#000] hover:bg-[#d42e0f]">Mulai Menjelajahi Kenangan</a>
+      <a href="#featured" class="inline-block py-3.5 px-10 bg-red text-cream font-bold text-[.88rem] tracking-[.18em] uppercase border-2 border-black shadow-[4px_4px_0_#000] transition-[transform,box-shadow,background] duration-200 relative hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#000] hover:bg-[#d42e0f]">Jelajahi Kenangan</a>
     </div>
 
     <div class="absolute left-0 right-0 bottom-0 z-5 flex gap-[7px] px-6">

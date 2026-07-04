@@ -11,13 +11,13 @@
         <div class="flex items-center gap-4 mt-2.5 flex-wrap">
           <span class="text-[.6rem] tracking-[.12em] uppercase text-tan opacity-50">FOLLOW US</span>
           <div class="flex gap-5 mt-0">
-            <a href="#" class="inline-flex items-center gap-1.5 font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">
+            <a href="https://www.instagram.com/kreasi_sisfo/" class="inline-flex items-center gap-1.5 font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">
               Instagram <FontAwesomeIcon :icon="byPrefixAndName.fab['instagram']" />
             </a>
-            <a href="#" class="inline-flex items-center gap-1.5 font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">
+            <a href="https://www.youtube.com/@KREASI_SISFOR" class="inline-flex items-center gap-1.5 font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">
               YouTube <FontAwesomeIcon :icon="byPrefixAndName.fab['youtube']" />
             </a>
-            <a href="#" class="inline-flex items-center gap-1.5 font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">
+            <a href="https://www.tiktok.com/@kreasi_sisfo" class="inline-flex items-center gap-1.5 font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">
               TikTok <FontAwesomeIcon :icon="byPrefixAndName.fab['tiktok']" />
             </a>
           </div>

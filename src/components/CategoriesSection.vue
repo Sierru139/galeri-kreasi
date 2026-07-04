@@ -85,7 +85,7 @@
           <!-- Sticky header (title + desc) -->
           <div class="p-6 md:p-8 pb-0 md:pb-0 shrink-0">
             <div class="font-bang text-[2.5rem] md:text-[3.5rem] tracking-[.06em] leading-none text-orange mb-1.5 [text-shadow:2px_2px_0_rgba(0,0,0,.8)]">
-              ANGKATAN {{ selectedLogo.year }}
+              KREASI {{ selectedLogo.year }}
             </div>
             <div class="font-hand text-[1.1rem] md:text-[1.3rem] text-cream opacity-95 italic mb-4 border-b border-[rgba(176,128,60,0.25)] pb-3">
               "{{ selectedLogo.desc }}"
