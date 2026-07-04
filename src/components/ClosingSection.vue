@@ -3,26 +3,26 @@
     <!-- Floating closing photos -->
     <div class="closing-photo absolute z-1 top-[5%] left-[1%] -rotate-[8deg]">
       <div class="bg-[#ede0c4] p-[8px_8px_30px] shadow-[2px_4px_16px_rgba(0,0,0,.6),0_0_0_1px_rgba(0,0,0,.3)] relative inline-block" style="transform:rotate(-8deg)">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='100'%3E%3Crect width='130' height='100' fill='%231a1208'/%3E%3Ccircle cx='65' cy='45' r='30' fill='%23302010'/%3E%3C/svg%3E" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="">
-        <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">2015 ♥</div>
+        <img :src="chosenPhotos[0]" @error="handleImageError(0)" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="" referrerpolicy="no-referrer">
+        <!-- <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">2015 ♥</div> -->
       </div>
     </div>
     <div class="closing-photo absolute z-1 top-[8%] right-[2%] rotate-[6deg]">
       <div class="bg-[#ede0c4] p-[8px_8px_30px] shadow-[2px_4px_16px_rgba(0,0,0,.6),0_0_0_1px_rgba(0,0,0,.3)] relative inline-block" style="transform:rotate(5deg)">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='100'%3E%3Crect width='130' height='100' fill='%23201510'/%3E%3Ccircle cx='55' cy='40' r='28' fill='%23352010'/%3E%3Ccircle cx='90' cy='55' r='22' fill='%23402815'/%3E%3C/svg%3E" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="">
-        <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">Bersama ♥</div>
+        <img :src="chosenPhotos[1]" @error="handleImageError(1)" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="" referrerpolicy="no-referrer">
+        <!-- <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">Bersama ♥</div> -->
       </div>
     </div>
     <div class="closing-photo absolute z-1 bottom-[15%] left-[2%] rotate-[10deg]">
       <div class="bg-[#ede0c4] p-[8px_8px_30px] shadow-[2px_4px_16px_rgba(0,0,0,.6),0_0_0_1px_rgba(0,0,0,.3)] relative inline-block" style="transform:rotate(9deg)">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='100'%3E%3Crect width='130' height='100' fill='%231c1008'/%3E%3Ccircle cx='65' cy='45' r='35' fill='%23302010'/%3E%3C/svg%3E" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="">
-        <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">Selalu ♥</div>
+        <img :src="chosenPhotos[2]" @error="handleImageError(2)" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="" referrerpolicy="no-referrer">
+        <!-- <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">Selalu ♥</div> -->
       </div>
     </div>
     <div class="closing-photo absolute z-1 bottom-[10%] right-[2%] -rotate-[7deg]">
       <div class="bg-[#ede0c4] p-[8px_8px_30px] shadow-[2px_4px_16px_rgba(0,0,0,.6),0_0_0_1px_rgba(0,0,0,.3)] relative inline-block" style="transform:rotate(-6deg)">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='100'%3E%3Crect width='130' height='100' fill='%23201408'/%3E%3Ccircle cx='65' cy='42' r='32' fill='%23382010'/%3E%3C/svg%3E" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="">
-        <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">2025 ♥</div>
+        <img :src="chosenPhotos[3]" @error="handleImageError(3)" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="" referrerpolicy="no-referrer">
+        <!-- <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">2025 ♥</div> -->
       </div>
     </div>
 
@@ -40,7 +40,7 @@
         </p>
         <p class="font-hand text-[1.1rem] text-tan italic opacity-80 mt-3">Sampai jumpa di cerita berikutnya.</p>
         <div class="mt-10">
-          <a href="#hero" class="btn-cta inline-block py-3.5 px-10 bg-red text-cream font-bold text-[.88rem] tracking-[.18em] uppercase border-2 border-black shadow-[4px_4px_0_#000] transition-[transform,box-shadow,background] duration-200 relative hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#000] hover:bg-[#d42e0f]">Kembali ke Awal</a>
+          <a href="#hero" class="inline-block py-3.5 px-10 bg-red text-cream font-bold text-[.88rem] tracking-[.18em] uppercase border-2 border-black shadow-[4px_4px_0_#000] transition-[transform,box-shadow,background] duration-200 relative hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#000] hover:bg-[#d42e0f]">Kembali ke Awal</a>
         </div>
       </div>
     </div>
@@ -48,4 +48,71 @@
 </template>
 
 <script setup>
+import { ref, computed, watch } from 'vue'
+import { angkatanData, driveImgUrl } from '../data.js'
+
+const DEFAULT_PLACEHOLDERS = [
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='100'%3E%3Crect width='130' height='100' fill='%231a1208'/%3E%3Ccircle cx='65' cy='45' r='30' fill='%23302010'/%3E%3C/svg%3E",
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='100'%3E%3Crect width='130' height='100' fill='%23201510'/%3E%3Ccircle cx='55' cy='40' r='28' fill='%23352010'/%3E%3Ccircle cx='90' cy='55' r='22' fill='%23402815'/%3E%3C/svg%3E",
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='100'%3E%3Crect width='130' height='100' fill='%231c1008'/%3E%3Ccircle cx='65' cy='45' r='35' fill='%23302010'/%3E%3C/svg%3E",
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='100'%3E%3Crect width='130' height='100' fill='%23201408'/%3E%3Ccircle cx='65' cy='42' r='32' fill='%23382010'/%3E%3C/svg%3E"
+]
+
+const chosenPhotos = ref([...DEFAULT_PLACEHOLDERS])
+
+// Compute a unique list of available photo IDs to watch changes reactively
+const allPhotoIds = computed(() => {
+  const ids = []
+  angkatanData.forEach(item => {
+    if (item.photos && item.photos.length > 0) {
+      item.photos.forEach(p => {
+        if (p && !ids.includes(p)) {
+          ids.push(p)
+        }
+      })
+    } else if (item.photo && !ids.includes(item.photo)) {
+      ids.push(item.photo)
+    }
+  })
+  return ids
+})
+
+function selectRandomPhotos() {
+  const photos = allPhotoIds.value
+  if (photos.length === 0) {
+    chosenPhotos.value = [...DEFAULT_PLACEHOLDERS]
+    return
+  }
+
+  // Shuffle unique photos using a random comparator
+  const shuffled = [...photos].sort(() => 0.5 - Math.random())
+
+  // Select up to 4 photos
+  const selected = []
+  for (let i = 0; i < 4; i++) {
+    if (i < shuffled.length) {
+      selected.push(driveImgUrl(shuffled[i], 300))
+    } else {
+      // Wrap around if there are fewer than 4 unique photos
+      selected.push(driveImgUrl(shuffled[i % shuffled.length], 300))
+    }
+  }
+  chosenPhotos.value = selected
+}
+
+// Watch photo IDs for changes (e.g. when Google Drive sync completes)
+watch(
+  allPhotoIds,
+  () => {
+    selectRandomPhotos()
+  },
+  { immediate: true, deep: true }
+)
+
+// Gracefully handle image load errors by reverting the specific slot to its placeholder SVG
+function handleImageError(index) {
+  if (index >= 0 && index < chosenPhotos.value.length) {
+    chosenPhotos.value[index] = DEFAULT_PLACEHOLDERS[index]
+  }
+}
 </script>

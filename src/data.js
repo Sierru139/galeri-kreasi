@@ -13,14 +13,15 @@ export const fallbackAngkatanData = [
   { year: 2022, desc: 'Lebih Dari Biasanya', tooltip: 'Lebih dari biasanya, lebih bermakna',   logo: '1_kJguf2FXRxE0GllauHl6x-rkQTeynsJ', photo: '1CKqN100IpsQn3XDUoa5gFfgD9SoEETvz' },
   { year: 2023, desc: 'Penuh Warna',         tooltip: 'Tahun yang penuh warna dan cerita',     logo: '1NXhMgif8gaVE33wJad5SdIqkrHCZ5R7x', photo: '1JVbeyBbGCxJZvBkHm6xHu3ec40PWYZ3E' },
   { year: 2024, desc: 'Menuju 10 Tahun',     tooltip: 'Persiapan menyambut satu dekade',       logo: '12LIBf-7d63EWqeA7CdMGW7qgcMKhGdPc', photo: '14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun' },
-  { year: 2025, desc: '1 Dekade, 1 Cerita',  tooltip: '1 Dekade, 1 Rumah, 1 Cerita 🎉',         logo: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', photo: null, active: true },
+  { year: 2025, desc: '1 Dekade, 1 Cerita',  tooltip: '1 Dekade, 1 Rumah, 1 Cerita 🎉',         logo: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', photo: null, active: true, fallbackVideos: [{ id: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', name: 'Closing KREASI 2025.mp4', mimeType: 'video/mp4' }] },
 ]
 
 // Reactive array exported for all components to consume directly
 export const angkatanData = reactive(
   fallbackAngkatanData.map(item => ({
     ...item,
-    photos: item.photo ? [item.photo] : []
+    photos: item.photo ? [item.photo] : [],
+    videos: item.fallbackVideos || []
   }))
 )
 
@@ -30,8 +31,8 @@ export function driveImgUrl(id, w) {
   return `https://lh3.googleusercontent.com/d/${id}=w${w || 600}`
 }
 
-// Helper to recursively fetch image files inside a folder (including inside any subfolders, e.g., 'koleksi_foto')
-async function fetchImagesInFolder(folderId, apiKey) {
+// Helper to recursively fetch image and video files inside a folder
+async function fetchMediaInFolder(folderId, apiKey) {
   try {
     const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+trashed=false&fields=files(id,name,mimeType)&pageSize=1000&key=${apiKey}`
     const res = await fetch(url)
@@ -39,14 +40,14 @@ async function fetchImagesInFolder(folderId, apiKey) {
     const data = await res.json()
     const items = data.files || []
 
-    const images = items.filter(item => item.mimeType.startsWith('image/'))
+    const media = items.filter(item => item.mimeType.startsWith('image/') || item.mimeType.startsWith('video/'))
     const subfolders = items.filter(item => item.mimeType === 'application/vnd.google-apps.folder')
 
-    // Recursively query subfolders (useful if images are placed in nested subfolders like 'koleksi_foto')
-    const subfolderImagesPromises = subfolders.map(sub => fetchImagesInFolder(sub.id, apiKey))
-    const subfolderImagesList = await Promise.all(subfolderImagesPromises)
+    // Recursively query subfolders (useful if images/videos are placed in nested subfolders like 'koleksi_foto' or 'koleksi_video')
+    const subfolderPromises = subfolders.map(sub => fetchMediaInFolder(sub.id, apiKey))
+    const subfolderResults = await Promise.all(subfolderPromises)
 
-    return [...images, ...subfolderImagesList.flat()]
+    return [...media, ...subfolderResults.flat()]
   } catch (err) {
     console.error(`Error listing folder ${folderId} files:`, err)
     return []
@@ -87,7 +88,7 @@ export async function fetchDriveData(apiKey) {
     // 2. Fetch logos in the logo folder
     const yearLogoMap = {}
     if (logoFolderId) {
-      const logos = await fetchImagesInFolder(logoFolderId, apiKey)
+      const logos = await fetchMediaInFolder(logoFolderId, apiKey)
       logos.forEach(file => {
         const match = file.name.match(/\d{4}/)
         if (match) {
@@ -97,34 +98,47 @@ export async function fetchDriveData(apiKey) {
       })
     }
 
-    // 3. Fetch images for each year in parallel (avoids 403 bulk query issue and queries recursively)
+    // 3. Fetch media (photos and videos) for each year in parallel
     const yearPromises = Object.entries(yearFolderMap).map(async ([yrStr, fId]) => {
       const yr = parseInt(yrStr)
-      const photos = await fetchImagesInFolder(fId, apiKey)
+      const media = await fetchMediaInFolder(fId, apiKey)
+      
+      const photos = media.filter(item => item.mimeType.startsWith('image/'))
+      const videos = media.filter(item => item.mimeType.startsWith('video/'))
+
       return {
         year: yr,
-        photoIds: photos.map(img => img.id)
+        photoIds: photos.map(img => img.id),
+        videos: videos.map(vid => ({
+          id: vid.id,
+          name: vid.name,
+          mimeType: vid.mimeType
+        }))
       }
     })
 
     const yearResults = await Promise.all(yearPromises)
     const yearPhotosMap = {}
+    const yearVideosMap = {}
     yearResults.forEach(res => {
       yearPhotosMap[res.year] = res.photoIds
+      yearVideosMap[res.year] = res.videos
     })
 
     // 4. Update reactive angkatanData list
     const updatedList = fallbackAngkatanData.map(item => {
       const year = item.year
       const photos = yearPhotosMap[year] || []
-      const mainPhoto = photos.length > 0 ? photos[0] : null
+      const videos = yearVideosMap[year] || []
       const logoId = yearLogoMap[year] || item.logo
+      const finalPhoto = photos.length > 0 ? photos[0] : item.photo
 
       return {
         ...item,
         logo: logoId,
-        photo: mainPhoto,
-        photos: photos.length > 0 ? photos : (mainPhoto ? [mainPhoto] : [])
+        photo: finalPhoto,
+        photos: photos.length > 0 ? photos : (finalPhoto ? [finalPhoto] : []),
+        videos: videos.length > 0 ? videos : (item.fallbackVideos || [])
       }
     })
 
