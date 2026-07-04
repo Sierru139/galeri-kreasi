@@ -18,9 +18,9 @@
        :class="mobileOpen ? 'opacity-100 pointer-events-auto bg-[rgba(10,8,4,.98)]' : 'opacity-0 pointer-events-none bg-[rgba(10,8,4,.98)]'"
        @click.self="closeMnav">
     <a href="#hero" @click="closeMnav" class="font-bang text-[2.5rem] tracking-[.1em] text-cream transition-colors duration-200 hover:text-orange">BERANDA</a>
-    <a href="#gallery" @click="closeMnav" class="font-bang text-[2.5rem] tracking-[.1em] text-cream transition-colors duration-200 hover:text-orange">GALERI</a>
     <a href="#timeline" @click="closeMnav" class="font-bang text-[2.5rem] tracking-[.1em] text-cream transition-colors duration-200 hover:text-orange">TIMELINE</a>
-    <a href="#generation" @click="closeMnav" class="font-bang text-[2.5rem] tracking-[.1em] text-cream transition-colors duration-200 hover:text-orange">KENANGAN</a>
+    <a href="#generation" @click="closeMnav" class="font-bang text-[2.5rem] tracking-[.1em] text-cream transition-colors duration-200 hover:text-orange">LOGO</a>
+    <a href="#gallery" @click="closeMnav" class="font-bang text-[2.5rem] tracking-[.1em] text-cream transition-colors duration-200 hover:text-orange">GALERI</a>
     <a href="#featured" @click="closeMnav" class="font-bang text-[2.5rem] tracking-[.1em] text-cream transition-colors duration-200 hover:text-orange">TENTANG</a>
     <a href="#closing" @click="closeMnav" class="font-bang text-[2.5rem] tracking-[.1em] text-cream transition-colors duration-200 hover:text-orange">KONTAK</a>
   </div>

@@ -32,7 +32,7 @@
         Sinkronisasi... 
       </div>
 
-      <div v-else class="gallery-masonry columns-4 gap-x-5 reveal">
+      <div v-else class="gallery-masonry grid grid-cols-4 gap-x-5 reveal">
         <div
           v-for="(item, i) in galleryItems"
           :key="item.type + '-' + item.year + '-' + i"
@@ -163,7 +163,7 @@
           :src="selectedImage.src" 
           :alt="selectedImage.alt"
           class="max-w-full max-h-[75vh] md:max-h-[80vh] object-contain rounded border border-white/10 shadow-2xl"
-          @error="e => e.target.src = `https://drive.google.com/thumbnail?id=${selectedImage.id}&sz=w1200`"
+          @error="e => { if (selectedImage) e.target.src = `https://drive.google.com/thumbnail?id=${selectedImage.id}&sz=w1200` }"
         />
       </div>
 

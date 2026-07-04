@@ -3,17 +3,17 @@ import { reactive } from 'vue'
 // ── FALLBACK BACKUP ANGKATAN DATA ──
 // Used as initial state and when the Google Drive API fetch is not active or fails.
 export const fallbackAngkatanData = [
-  { year: 2015, desc: 'angkatan 2015', tooltip: 'Awal perjalanan KREASI dimulai', logo: '1fWN8Wp4AnisnKC5lVm7qnLUXbT-JiV2U', photo: null },
-  { year: 2016, desc: 'angkatan 2016', tooltip: 'Langkah baru menuju yang lebih baik', logo: '1WrkS_YJ46w7N-TSLV9FeZbESv82N8ni7', photo: '1w7bVYUY0DOHG-Y33rba99MW12IzkxKcU' },
-  { year: 2017, desc: 'angkatan 2017', tooltip: 'Kami tumbuh bersama lebih kuat', logo: '1Y9TU_9whwoeFnimYEw3knB-SmuTeq3_E', photo: '1WuJs3BXW0-Ym-8NXGci8RPNr5kWZC5UU' },
-  { year: 2018, desc: 'angkatan 2018', tooltip: 'Semakin kuat, semakin solid', logo: '1AR0qbs1uDeYCKTJlCOS8v_JHGRuPVSZ0', photo: null },
-  { year: 2019, desc: 'angkatan 2019', tooltip: 'Banyak cerita baru tercipta', logo: '1r2lxGdmP_FE6JF2FXuNmV2fnYxK4Bcru', photo: null },
-  { year: 2020, desc: 'angkatan 2020', tooltip: 'Bertahan & belajar di masa sulit', logo: '1wMv-m8Yg1i3D_wm5HJeHh1fR3baNuJEd', photo: '1RNvUlpizxwdlcpBUCoS08urUS7pMj-0L' },
-  { year: 2021, desc: 'angkatan 2021', tooltip: 'Bangkit kembali lebih bersemangat', logo: '1WrgVeago4XbJAcIg4mhUG_oKqx1mmGS6', photo: '1xS4MwcBQCSj7spPARC1RjbyIyyjyX-cN' },
-  { year: 2022, desc: 'angkatan 2022', tooltip: 'Lebih dari biasanya, lebih bermakna', logo: '1_kJguf2FXRxE0GllauHl6x-rkQTeynsJ', photo: '1CKqN100IpsQn3XDUoa5gFfgD9SoEETvz' },
-  { year: 2023, desc: 'angkatan 2023', tooltip: 'Tahun yang penuh warna dan cerita', logo: '1NXhMgif8gaVE33wJad5SdIqkrHCZ5R7x', photo: '1JVbeyBbGCxJZvBkHm6xHu3ec40PWYZ3E' },
-  { year: 2024, desc: 'angkatan 2024', tooltip: 'Persiapan menyambut satu dekade', logo: '12LIBf-7d63EWqeA7CdMGW7qgcMKhGdPc', photo: '14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun' },
-  { year: 2025, desc: 'angkatan 2025', tooltip: '1 Dekade, 1 Rumah, 1 Cerita', logo: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', photo: null, active: true, fallbackVideos: [{ id: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', name: 'Closing KREASI 2025.mp4', mimeType: 'video/mp4' }] },
+  { year: 2015, desc: 'kreasi 2015', tooltip: 'Awal perjalanan KREASI dimulai', logo: '1fWN8Wp4AnisnKC5lVm7qnLUXbT-JiV2U', photo: null },
+  { year: 2016, desc: 'kreasi 2016', tooltip: 'Langkah baru menuju yang lebih baik', logo: '1WrkS_YJ46w7N-TSLV9FeZbESv82N8ni7', photo: '1w7bVYUY0DOHG-Y33rba99MW12IzkxKcU' },
+  { year: 2017, desc: 'kreasi 2017', tooltip: 'Kami tumbuh bersama lebih kuat', logo: '1Y9TU_9whwoeFnimYEw3knB-SmuTeq3_E', photo: '1WuJs3BXW0-Ym-8NXGci8RPNr5kWZC5UU' },
+  { year: 2018, desc: 'kreasi 2018', tooltip: 'Semakin kuat, semakin solid', logo: '1AR0qbs1uDeYCKTJlCOS8v_JHGRuPVSZ0', photo: null },
+  { year: 2019, desc: 'kreasi 2019', tooltip: 'Banyak cerita baru tercipta', logo: '1r2lxGdmP_FE6JF2FXuNmV2fnYxK4Bcru', photo: null },
+  { year: 2020, desc: 'kreasi 2020', tooltip: 'Bertahan & belajar di masa sulit', logo: '1wMv-m8Yg1i3D_wm5HJeHh1fR3baNuJEd', photo: '1RNvUlpizxwdlcpBUCoS08urUS7pMj-0L' },
+  { year: 2021, desc: 'kreasi 2021', tooltip: 'Bangkit kembali lebih bersemangat', logo: '1WrgVeago4XbJAcIg4mhUG_oKqx1mmGS6', photo: '1xS4MwcBQCSj7spPARC1RjbyIyyjyX-cN' },
+  { year: 2022, desc: 'kreasi 2022', tooltip: 'Lebih dari biasanya, lebih bermakna', logo: '1_kJguf2FXRxE0GllauHl6x-rkQTeynsJ', photo: '1CKqN100IpsQn3XDUoa5gFfgD9SoEETvz' },
+  { year: 2023, desc: 'kreasi 2023', tooltip: 'Tahun yang penuh warna dan cerita', logo: '1NXhMgif8gaVE33wJad5SdIqkrHCZ5R7x', photo: '1JVbeyBbGCxJZvBkHm6xHu3ec40PWYZ3E' },
+  { year: 2024, desc: 'kreasi 2024', tooltip: 'Persiapan menyambut satu dekade', logo: '12LIBf-7d63EWqeA7CdMGW7qgcMKhGdPc', photo: '14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun' },
+  { year: 2025, desc: 'kreasi 2025', tooltip: '1 Dekade, 1 Rumah, 1 Cerita 🎉', logo: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', photo: null, active: true, fallbackVideos: [{ id: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', name: 'Closing KREASI 2025.mp4', mimeType: 'video/mp4' }] },
 ]
 
 // Reactive array exported for all components to consume directly

@@ -6,8 +6,8 @@
           <!-- <svg viewBox="0 0 20 20" fill="currentColor" class="w-[18px] h-[18px]"><path d="M10 1l2.4 7.3H20l-6.2 4.5 2.4 7.3L10 15.6 3.8 20l2.4-7.3L0 8.3h7.6z"/></svg> -->
           Tahun Angkatan
         </div>
-        <h2 class="font-bang text-[clamp(2.2rem,7vw,4rem)] tracking-[.06em] leading-none text-cream2 [text-shadow:2px_2px_0_rgba(0,0,0,.8)] reveal">LOGO <span class="text-orange">ANGKATAN</span></h2>
-        <p class="font-hand text-[.9rem] text-tan opacity-80 mt-1.5 italic reveal">Setiap angkatan punya logo dan wajahnya sendiri. Klik untuk melihat filosofi logonya.</p>
+        <h2 class="font-bang text-[clamp(2.2rem,7vw,4rem)] tracking-[.06em] leading-none text-cream2 [text-shadow:2px_2px_0_rgba(0,0,0,.8)] reveal">LOGO <span class="text-orange">KREASI</span></h2>
+        <p class="font-hand text-[.9rem] text-tan opacity-80 mt-1.5 italic reveal">Setiap angkatan kreasi punya logo dan wajahnya sendiri. Klik untuk melihat filosofi logonya.</p>
       </div>
 
       <div class="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-4 relative z-2 max-w-[980px] mx-auto">
@@ -18,7 +18,7 @@
           :data-year="y.year"
           @click="openLogoModal(y)"
         >
-          <div class="w-full aspect-square bg-white rounded flex items-center justify-center overflow-hidden border-2 border-[rgba(0,0,0,.15)] shadow-[inset_0_0_8px_rgba(0,0,0,0.08)] p-2 mb-2.5">
+          <div class="w-full aspect-square bg-white rounded flex items-center justify-center overflow-hidden mb-2.5">
             <img
               :src="driveImgUrl(y.logo, 300)"
               :alt="'Logo ' + y.year"
@@ -78,7 +78,7 @@
             :src="driveImgUrl(selectedLogo.logo, 800)" 
             :alt="'Logo ' + selectedLogo.year"
             class="max-w-full max-h-[300px] md:max-h-[400px] object-contain drop-shadow-[0_8px_20px_rgba(0,0,0,0.6)]"
-            @error="e => e.target.src = `https://drive.google.com/thumbnail?id=${selectedLogo.logo}&sz=w800`"
+            @error="e => { if (selectedLogo) e.target.src = `https://drive.google.com/thumbnail?id=${selectedLogo.logo}&sz=w800` }"
           />
         </div>
 
@@ -123,7 +123,7 @@ const philosophies = {
 }
 
 function getPhilosophy(year) {
-  return philosophies[year] || "Deskripsi filosofi logo untuk angkatan ini belum diunggah."
+  return philosophies[year] || "Deskripsi filosofi logo kreasi untuk angkatan ini belum diunggah."
 }
 
 const selectedLogo = ref(null)
