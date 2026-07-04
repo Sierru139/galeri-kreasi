@@ -3,10 +3,10 @@
     <div class="max-w-[1200px] mx-auto px-6 pt-12 pb-12 relative z-2">
       <div class="mb-12">
         <div class="font-hand text-[.9rem] text-orange tracking-[.1em] flex items-center gap-2 reveal">
-          <svg viewBox="0 0 20 20" fill="currentColor" class="w-[18px] h-[18px]"><path d="M10 1l2.4 7.3H20l-6.2 4.5 2.4 7.3L10 15.6 3.8 20l2.4-7.3L0 8.3h7.6z"/></svg>
+          <!-- <svg viewBox="0 0 20 20" fill="currentColor" class="w-[18px] h-[18px]"><path d="M10 1l2.4 7.3H20l-6.2 4.5 2.4 7.3L10 15.6 3.8 20l2.4-7.3L0 8.3h7.6z"/></svg> -->
           Tahun Angkatan
         </div>
-        <h2 class="font-bang text-[clamp(2.2rem,7vw,4rem)] tracking-[.06em] leading-none text-cream2 [text-shadow:2px_2px_0_rgba(0,0,0,.8)] reveal">ANGKATAN</h2>
+        <h2 class="font-bang text-[clamp(2.2rem,7vw,4rem)] tracking-[.06em] leading-none text-cream2 [text-shadow:2px_2px_0_rgba(0,0,0,.8)] reveal">LOGO <span class="text-orange">ANGKATAN</span></h2>
         <p class="font-hand text-[.9rem] text-tan opacity-80 mt-1.5 italic reveal">Setiap angkatan punya logo dan wajahnya sendiri. Klik untuk melihat filosofi logonya.</p>
       </div>
 
@@ -40,7 +40,7 @@
       <!-- Quote strips -->
       <div class="flex gap-6 mt-10 flex-wrap">
         <div class="bg-[#8b1a0a] py-2 px-4 font-hand text-[.85rem] text-[#f8d0a0] -rotate-2 shadow-[2px_2px_8px_rgba(0,0,0,.5)]">
-          Kenangan tidak harus sempurna,<br>yang penting nyata. ♥
+          Kenangan tidak harus sempurna,<br>yang penting nyata.
         </div>
         <div class="ml-auto font-hand text-[.85rem] text-cream opacity-70 text-right italic self-center">
           Bersama kita bisa,<br>bersama kita berarti.

@@ -3,25 +3,31 @@
     <!-- Floating closing photos -->
     <div class="closing-photo absolute z-1 top-[5%] left-[1%] -rotate-[8deg]">
       <div class="bg-[#ede0c4] p-[8px_8px_30px] shadow-[2px_4px_16px_rgba(0,0,0,.6),0_0_0_1px_rgba(0,0,0,.3)] relative inline-block" style="transform:rotate(-8deg)">
-        <img :src="chosenPhotos[0]" @error="handleImageError(0)" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="" referrerpolicy="no-referrer">
+        <img :src="chosenPhotos[0]" @error="handleImageError(0)" class="w-[130px] h-[100px] object-cover sepia-[.5] blur-[.8px]" alt="" referrerpolicy="no-referrer">
         <!-- <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">2015 ♥</div> -->
       </div>
     </div>
     <div class="closing-photo absolute z-1 top-[8%] right-[2%] rotate-[6deg]">
       <div class="bg-[#ede0c4] p-[8px_8px_30px] shadow-[2px_4px_16px_rgba(0,0,0,.6),0_0_0_1px_rgba(0,0,0,.3)] relative inline-block" style="transform:rotate(5deg)">
-        <img :src="chosenPhotos[1]" @error="handleImageError(1)" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="" referrerpolicy="no-referrer">
+        <img :src="chosenPhotos[1]" @error="handleImageError(1)" class="w-[130px] h-[100px] object-cover sepia-[.5] blur-[.8px]" alt="" referrerpolicy="no-referrer">
         <!-- <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">Bersama ♥</div> -->
       </div>
     </div>
     <div class="closing-photo absolute z-1 bottom-[15%] left-[2%] rotate-[10deg]">
       <div class="bg-[#ede0c4] p-[8px_8px_30px] shadow-[2px_4px_16px_rgba(0,0,0,.6),0_0_0_1px_rgba(0,0,0,.3)] relative inline-block" style="transform:rotate(9deg)">
-        <img :src="chosenPhotos[2]" @error="handleImageError(2)" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="" referrerpolicy="no-referrer">
+        <img :src="chosenPhotos[2]" @error="handleImageError(2)" class="w-[130px] h-[100px] object-cover sepia-[.5] blur-[.8px]" alt="" referrerpolicy="no-referrer">
         <!-- <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">Selalu ♥</div> -->
       </div>
     </div>
     <div class="closing-photo absolute z-1 bottom-[10%] right-[2%] -rotate-[7deg]">
       <div class="bg-[#ede0c4] p-[8px_8px_30px] shadow-[2px_4px_16px_rgba(0,0,0,.6),0_0_0_1px_rgba(0,0,0,.3)] relative inline-block" style="transform:rotate(-6deg)">
-        <img :src="chosenPhotos[3]" @error="handleImageError(3)" class="w-[130px] h-[100px] object-cover sepia-[.5]" alt="" referrerpolicy="no-referrer">
+        <img :src="chosenPhotos[3]" @error="handleImageError(3)" class="w-[130px] h-[100px] object-cover sepia-[.5] blur-[.8px]" alt="" referrerpolicy="no-referrer">
+        <!-- <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">2025 ♥</div> -->
+      </div>
+    </div>
+    <div class="closing-photo absolute z-1 bottom-[37%] md:right-[12%] right-[24%] -rotate-[1deg]">
+      <div class="bg-[#ede0c4] p-[8px_8px_30px] shadow-[2px_4px_16px_rgba(0,0,0,.6),0_0_0_1px_rgba(0,0,0,.3)] relative inline-block" style="transform:rotate(-6deg)">
+        <img :src="chosenPhotos[4]" @error="handleImageError(4)" class="w-[130px] h-[100px] object-cover sepia-[.5] blur-[.8px]" alt="" referrerpolicy="no-referrer">
         <!-- <div class="font-hand text-[.8rem] text-[#3a2a10] text-center pt-1.5 leading-[1.3]">2025 ♥</div> -->
       </div>
     </div>
@@ -89,7 +95,7 @@ function selectRandomPhotos() {
 
   // Select up to 4 photos
   const selected = []
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     if (i < shuffled.length) {
       selected.push(driveImgUrl(shuffled[i], 300))
     } else {

@@ -1,7 +1,7 @@
 <template>
   <section id="featured" class="py-20 relative bg-bg2">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="featured-label inline-block bg-red text-cream2 font-bang text-[1.1rem] tracking-[.08em] py-1.5 px-3.5 -rotate-3 shadow-[3px_3px_0_#000] mb-10 relative reveal">★ KENANGAN TERFAVORIT</div>
+      <div class="featured-label inline-block bg-red text-cream2 font-bang text-[1.1rem] tracking-[.08em] py-1.5 px-3.5 -rotate-3 shadow-[3px_3px_0_#000] mb-10 relative reveal">KENANGAN TERFAVORIT</div>
       <div class="featured-grid grid grid-cols-2 gap-12 items-start">
 
         <!-- Left: Image -->
