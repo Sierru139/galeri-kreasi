@@ -1,6 +1,7 @@
 <template>
   <NavBar />
   <HeroSection />
+  <FeaturedSection />
   <TimelineSection />
   <CategoriesSection @filter-year="onFilterYear" />
   <GallerySection 
@@ -8,7 +9,6 @@
     :isFetching="isFetching"
     @update:activeFilter="onFilterUpdate" 
   />
-  <FeaturedSection />
   <ClosingSection />
   <FooterSection />
 </template>
@@ -17,10 +17,10 @@
 import { ref, onMounted, nextTick, watch } from 'vue'
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
+import FeaturedSection from './components/FeaturedSection.vue'
 import TimelineSection from './components/TimelineSection.vue'
 import CategoriesSection from './components/CategoriesSection.vue'
 import GallerySection from './components/GallerySection.vue'
-import FeaturedSection from './components/FeaturedSection.vue'
 import ClosingSection from './components/ClosingSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import { fetchDriveData } from './data.js'

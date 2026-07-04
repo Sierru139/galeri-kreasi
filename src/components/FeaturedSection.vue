@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+    <div class="max-w-300 mx-auto px-6 relative z-10">
 
       <!-- Section label tape -->
       <div class="inline-block relative mb-14 reveal">
@@ -39,26 +39,18 @@
           
           <!-- Torn paper title block -->
           <div class="about-torn-paper relative bg-[#e8dcc0] p-8 md:p-10 shadow-[4px_8px_24px_rgba(0,0,0,.7)] mb-8">
-            <div class="pushpin" style="top:-8px; right:30px;"></div>
-            
             <!-- Coffee stain decoration -->
-            <div class="coffee-stain"></div>
+            <!-- <div class="coffee-stain"></div> -->
 
-            <div class="font-hand text-[.85rem] text-[#8a6040] tracking-[.08em] mb-2">catatan tentang kami ✎</div>
+            <div class="font-hand text-[.85rem] text-[#8a6040] tracking-[.08em] mb-2">catatan tentang kami</div>
             <h2 class="font-bang text-[clamp(2.8rem,8vw,4.5rem)] tracking-[.04em] leading-[.9] text-[#1a0e00] [text-shadow:2px_2px_0_rgba(0,0,0,.15)] mb-3">
-              ABOUT<br>
+              TENTANG<br>
               <span class="text-red">KREASI</span>
             </h2>
             <div class="w-[60px] h-[3px] bg-red mb-4"></div>
             <p class="font-hand text-[1rem] text-[#5a3a10] leading-[1.6] italic">
-              Membuka halaman pertama dari buku kenangan yang menyimpan 10 tahun perjalanan keluarga besar Sistem Informasi.
+              Membuka halaman pertama dari buku kenangan yang menyimpan 10 tahun perjalanan.
             </p>
-
-            <!-- Hand-drawn underline SVG -->
-            <svg class="w-[120px] mt-3 opacity-40" viewBox="0 0 120 8" fill="none">
-              <path d="M2 6C20 2 40 4 60 3C80 2 100 5 118 2" stroke="#8b6f3a" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M5 7C25 4 45 6 65 5C85 4 105 7 115 4" stroke="#8b6f3a" stroke-width="1" stroke-linecap="round" opacity=".5"/>
-            </svg>
           </div>
 
           <!-- Vintage stamp "Since 2015" -->
@@ -81,7 +73,7 @@
                 class="w-full aspect-[4/3] object-cover sepia-[.4] contrast-[1.1] brightness-[.95]"
                 @error="e => e.target.src='https://drive.google.com/thumbnail?id=17iZ9FCOJTgFmBrx2JKaZdND8PvYmFj9P&sz=w600'"
               >
-              <div class="font-hand text-[.95rem] text-[#3a2a10] text-center pt-2.5">Satu rumah, satu cerita ♥</div>
+              <div class="font-hand text-[.95rem] text-[#3a2a10] text-center pt-2.5">Satu rumah, satu cerita</div>
             </div>
           </div>
 
@@ -96,19 +88,18 @@
                 class="w-full aspect-square object-cover sepia-[.5] contrast-[1.05]"
                 @error="e => e.target.style.display='none'"
               >
-              <div class="font-hand text-[.55rem] text-[#5a3a10] text-center pt-1">memories ★</div>
             </div>
           </div>
 
           <!-- Ink stamp decoration -->
-          <div class="about-ink-stamp hidden lg:flex reveal">
+          <!-- <div class="about-ink-stamp hidden lg:flex reveal">
             <svg viewBox="0 0 80 80" class="w-[70px] h-[70px]">
               <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(192,39,10,.25)" stroke-width="3"/>
               <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(192,39,10,.2)" stroke-width="1.5"/>
               <text x="40" y="36" text-anchor="middle" fill="rgba(192,39,10,.3)" font-family="Bangers" font-size="8" letter-spacing="2">KREASI</text>
               <text x="40" y="48" text-anchor="middle" fill="rgba(192,39,10,.25)" font-family="Bangers" font-size="11" letter-spacing="1">SI</text>
             </svg>
-          </div>
+          </div> -->
         </div>
 
         <!-- ═══════════════════════════════ -->
@@ -124,108 +115,63 @@
             <!-- Notebook header tag -->
             <div class="notebook-tag font-type text-[.68rem] tracking-[.12em] uppercase text-[#6a4020] mb-3 flex items-center gap-1.5">
               KREASI SI — CATATAN SEJARAH
-              <span class="text-red text-[.9rem]">★</span>
             </div>
 
             <!-- ── BLOCK 1: Apa itu KREASI? ── -->
             <div class="about-block mb-8 reveal">
               <div class="flex items-start gap-3 mb-3">
-                <!-- Hand-drawn book icon -->
-                <div class="about-icon flex-shrink-0">
-                  <svg viewBox="0 0 40 40" class="w-10 h-10">
-                    <rect x="8" y="6" width="24" height="28" rx="2" fill="none" stroke="#c0270a" stroke-width="2" transform="rotate(-3, 20, 20)"/>
-                    <line x1="13" y1="6" x2="13" y2="34" stroke="#c0270a" stroke-width="1.5" transform="rotate(-3, 20, 20)"/>
-                    <line x1="17" y1="13" x2="28" y2="13" stroke="#8b6f3a" stroke-width="1" stroke-linecap="round" opacity=".6"/>
-                    <line x1="17" y1="18" x2="26" y2="18" stroke="#8b6f3a" stroke-width="1" stroke-linecap="round" opacity=".6"/>
-                    <line x1="17" y1="23" x2="27" y2="23" stroke="#8b6f3a" stroke-width="1" stroke-linecap="round" opacity=".6"/>
-                  </svg>
-                </div>
+                <!-- Hand-drawn book icon --> 
                 <div>
                   <h3 class="font-marker text-[clamp(1.2rem,2.5vw,1.6rem)] text-[#2a1200] leading-[1.2] mb-1">Apa itu KREASI?</h3>
-                  <div class="about-underline-svg">
-                    <svg viewBox="0 0 150 6" class="w-[100px]">
-                      <path d="M2 4C30 1 60 5 90 2C120 4 148 1 148 3" stroke="#c0270a" stroke-width="2" stroke-linecap="round" fill="none"/>
-                    </svg>
-                  </div>
                 </div>
               </div>
-              <p class="font-type text-[.82rem] text-[#3a2a10] leading-[1.95] ml-0 md:ml-[52px]">
-                <strong class="text-[#c0270a]">KREASI</strong> (Keluarga Besar Sistem Informasi) adalah wadah kebersamaan dan kekeluargaan seluruh mahasiswa jurusan Sistem Informasi, Fakultas Sains dan Teknologi, UIN Alauddin Makassar. Lebih dari sekadar organisasi — KREASI adalah <em>rumah kedua</em> bagi setiap anggotanya.
+              <p class="font-type text-[.82rem] text-[#3a2a10] leading-[1.95] ">
+                KREASI (Kreativitas dan solidaritas sistem informasi) merupakan salah satu rangkaian kegiatan kaderisasi yang menjadi wadah bagi mahasiswa sistem informasi uinam untuk membangun kebersamaan, mempererat melalui hubungan kekeluargaan, serta menumbuhkan rasa solidaritas antara anggota. berbagai kegiatan yang dilakukan secara bersama-sama, peserta diberikan kesempatan untuk berinteraksi lebih dekat, mengenal karakter satu sama lain, dan membangun kemampuan bekerja dalam tim. kreasi juga menjadi sarana untuk menanamkan nilai-nilai kebersamaan, loyalits, dan tanggung jawab sebagai bagian dari keluarga sistem informasi
               </p>
             </div>
 
             <!-- Decorative divider -->
-            <div class="flex items-center gap-3 my-6 mx-0 md:mx-[52px]">
-              <div class="flex-1 h-px bg-[#c8b890]"></div>
-              <span class="text-[#8b6f3a] text-[.7rem] opacity-60">✦ ✦ ✦</span>
-              <div class="flex-1 h-px bg-[#c8b890]"></div>
-            </div>
 
             <!-- ── BLOCK 2: Tujuan KREASI ── -->
             <div class="about-block mb-8 reveal">
               <div class="flex items-start gap-3 mb-3">
                 <!-- Hand-drawn compass/target icon -->
-                <div class="about-icon flex-shrink-0">
-                  <svg viewBox="0 0 40 40" class="w-10 h-10">
-                    <circle cx="20" cy="20" r="14" fill="none" stroke="#c0270a" stroke-width="2"/>
-                    <circle cx="20" cy="20" r="8" fill="none" stroke="#c0270a" stroke-width="1.5" opacity=".6"/>
-                    <circle cx="20" cy="20" r="2.5" fill="#c0270a"/>
-                    <line x1="20" y1="4" x2="20" y2="10" stroke="#8b6f3a" stroke-width="1" stroke-linecap="round"/>
-                    <line x1="20" y1="30" x2="20" y2="36" stroke="#8b6f3a" stroke-width="1" stroke-linecap="round"/>
-                    <line x1="4" y1="20" x2="10" y2="20" stroke="#8b6f3a" stroke-width="1" stroke-linecap="round"/>
-                    <line x1="30" y1="20" x2="36" y2="20" stroke="#8b6f3a" stroke-width="1" stroke-linecap="round"/>
-                  </svg>
-                </div>
                 <div>
                   <h3 class="font-marker text-[clamp(1.2rem,2.5vw,1.6rem)] text-[#2a1200] leading-[1.2] mb-1">Tujuan KREASI</h3>
-                  <div class="about-underline-svg">
-                    <svg viewBox="0 0 150 6" class="w-[100px]">
-                      <path d="M2 4C30 1 60 5 90 2C120 4 148 1 148 3" stroke="#e07c00" stroke-width="2" stroke-linecap="round" fill="none"/>
-                    </svg>
-                  </div>
                 </div>
               </div>
-              <p class="font-type text-[.82rem] text-[#3a2a10] leading-[1.95] ml-0 md:ml-[52px]">
-                Menjadi jembatan antar angkatan, ruang bertumbuh, dan tempat setiap mahasiswa Sistem Informasi menemukan jati dirinya. KREASI hadir untuk membangun rasa solidaritas, mencetak kader-kader terbaik, dan menyatukan perbedaan menjadi satu kekuatan yang utuh.
-              </p>
+                <ul class="font-type text-[.82rem] text-[#3a2a10] leading-[1.95]">
+                  <li>1. Menjadi sarana bagi anggota muda untuk berinteraksi, berkolaborasi, dan bekerja sama secara langsung dalam mencapai tujuan bersama.</li>
+                  <li>2. Mempererat hubungan kekeluargaan dan solidaritas antaranggota angkatan maupun dalam lingkup Keluarga Besar Sistem Informasi.</li>
+                  <li>3. Menjadi wadah untuk saling mengenal karakter, potensi, dan kemampuan masing-masing anggota serta membangun kerja sama yang baik dalam organisasi.</li>
+                </ul>
             </div>
 
             <!-- Decorative divider -->
-            <div class="flex items-center gap-3 my-6 mx-0 md:mx-[52px]">
+            <!-- <div class="flex items-center gap-3 my-6 mx-0 md:mx-[52px]">
               <div class="flex-1 h-px bg-[#c8b890]"></div>
-              <span class="text-[#8b6f3a] text-[.7rem] opacity-60">✦ ✦ ✦</span>
               <div class="flex-1 h-px bg-[#c8b890]"></div>
-            </div>
+            </div> -->
 
             <!-- ── BLOCK 3: Awal Mula KREASI ── -->
             <div class="about-block mb-6 reveal">
               <div class="flex items-start gap-3 mb-3">
                 <!-- Hand-drawn seedling/origin icon -->
-                <div class="about-icon flex-shrink-0">
-                  <svg viewBox="0 0 40 40" class="w-10 h-10">
-                    <path d="M20 35V20" stroke="#c0270a" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M20 24C15 22 12 17 14 12C16 14 20 16 20 20" stroke="#c0270a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                    <path d="M20 20C25 18 28 13 26 8C24 10 20 12 20 16" stroke="#c0270a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                    <circle cx="20" cy="8" r="2" fill="#e07c00" opacity=".6"/>
-                    <ellipse cx="20" cy="36" rx="8" ry="2" fill="#8b6f3a" opacity=".2"/>
-                  </svg>
-                </div>
                 <div>
                   <h3 class="font-marker text-[clamp(1.2rem,2.5vw,1.6rem)] text-[#2a1200] leading-[1.2] mb-1">Awal Mula KREASI</h3>
-                  <div class="about-underline-svg">
-                    <svg viewBox="0 0 150 6" class="w-[100px]">
-                      <path d="M2 4C30 1 60 5 90 2C120 4 148 1 148 3" stroke="#8b6f3a" stroke-width="2" stroke-linecap="round" fill="none"/>
-                    </svg>
-                  </div>
                 </div>
               </div>
-              <p class="font-type text-[.82rem] text-[#3a2a10] leading-[1.95] ml-0 md:ml-[52px]">
-                Bermula pada tahun 2015, saat angkatan pertama Sistem Informasi UIN Alauddin Makassar menginjakkan kaki di kampus. Dengan semangat merintis dan mimpi yang besar, mereka membentuk sebuah wadah bernama KREASI — yang kini telah melewati <strong class="text-[#c0270a]">satu dekade</strong> penuh cerita, tawa, perjuangan, dan kebersamaan.
+              <p class="font-type text-[.82rem] text-[#3a2a10] leading-[1.95]">
+                KREASI (Kreativitas dan Solidaritas Sistem Informasi) lahir dari kebutuhan untuk membangun hubungan yang lebih erat antar mahasiswa Sistem Informasi UIN Alauddin Makassar. Seiring bertambahnya jumlah setiap angkatan, diperlukan sebuah wadah yang tidak hanya menjadi tempat berkumpul, tetapi juga mampu menumbuhkan rasa kekeluargaan, solidaritas, dan kebersamaan di lingkungan Keluarga Besar Sistem Informasi. mahasiswa
+                <br><br>
+                Berangkat dari semangat tersebut, KREASI kemudian dibentuk sebagai salah satu rangkaian kegiatan kaderisasi yang berfokus pada penguatan hubungan antaranggota. Kegiatan ini dirancang untuk memberikan ruang bagi mahasiswa agar dapat saling mengenal lebih dekat, memahami karakter satu sama lain, serta membangun kerja sama melalui berbagai aktivitas yang edukatif dan menyenangkan.
+                <br><br>
+                Sejak pertama kali dilaksanakan, KREASI terus berkembang menjadi kegiatan yang memiliki peran penting dalam mempererat ikatan antar mahasiswa Sistem Informasi. Nilai-nilai kebersamaan, loyalitas, tanggung jawab, dan solidaritas yang ditanamkan dalam setiap pelaksanaannya menjadikan KREASI sebagai salah satu tradisi yang memperkuat identitas dan semangat kekeluargaan di lingkungan Sistem Informasi UIN Alauddin Makassar.
               </p>
             </div>
 
             <!-- Closing quote block -->
-            <div class="border-l-[3px] border-red pl-4 ml-0 md:ml-[52px] mt-8 mb-3 reveal">
+            <div class="border-l-[3px] border-red pl-4 mt-8 mb-3 reveal">
               <p class="font-hand text-[1rem] md:text-[1.1rem] text-[#5a3a10] italic leading-[1.6]">
                 "Beda angkatan, beda logo, beda wajah — tapi tetap satu rumah yang sama. 10 tahun bukan sekadar angka, tapi bukti bahwa KREASI adalah cerita yang tidak pernah selesai ditulis."
               </p>
@@ -248,23 +194,16 @@
       <!-- Bottom decorative elements -->
       <div class="flex justify-between items-end mt-16 flex-wrap gap-6 reveal">
         <!-- Ink blot -->
-        <div class="about-ink-blot opacity-20">
-          <svg viewBox="0 0 60 30" class="w-[50px]">
-            <ellipse cx="30" cy="15" rx="25" ry="12" fill="#1a0e00"/>
-            <ellipse cx="22" cy="12" rx="8" ry="5" fill="#1a0e00"/>
-            <ellipse cx="38" cy="18" rx="6" ry="4" fill="#1a0e00"/>
-          </svg>
-        </div>
         
         <!-- Page number -->
-        <div class="font-type text-[.7rem] text-tan opacity-40 tracking-[.15em]">
+        <!-- <div class="font-type text-[.7rem] text-tan opacity-40 tracking-[.15em]">
           — halaman 01 dari ∞ —
-        </div>
+        </div> -->
 
         <!-- Small doodle -->
-        <div class="font-hand text-[1rem] text-orange opacity-30 rotate-[5deg]">
+        <!-- <div class="font-hand text-[1rem] text-orange opacity-30 rotate-[5deg]">
           ♪ ★ ♫
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

@@ -3,7 +3,7 @@
     <div class="ticket-footer grid grid-cols-[auto_1fr_auto] items-stretch border-t-2 border-b-2 border-dashed border-[rgba(176,128,60,.3)]">
       <div class="tf-left p-6 px-7 border-r-2 border-dashed border-[rgba(176,128,60,.25)] flex flex-col justify-center gap-2">
         <div class="font-bang text-[2rem] tracking-[.08em] text-orange [text-shadow:-2px_2px_0_#000,2px_2px_0_#000] leading-none">KREASI</div>
-        <div class="font-hand text-[.7rem] text-tan tracking-[.1em]">est. 2015 ★</div>
+        <div class="font-hand text-[.7rem] text-tan tracking-[.1em]">est. 2015</div>
       </div>
       <div class="p-6 px-8 flex flex-col justify-center gap-1.5">
         <div class="font-type text-[.85rem] text-cream opacity-90 italic mb-1">"10 TAHUN PERJALANAN, 10 TAHUN CERITA"</div>
@@ -11,15 +11,21 @@
         <div class="flex items-center gap-4 mt-2.5 flex-wrap">
           <span class="text-[.6rem] tracking-[.12em] uppercase text-tan opacity-50">FOLLOW US</span>
           <div class="flex gap-5 mt-0">
-            <a href="#" class="font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">Instagram</a>
-            <a href="#" class="font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">YouTube</a>
-            <a href="#" class="font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">TikTok</a>
+            <a href="#" class="inline-flex items-center gap-1.5 font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">
+              Instagram <FontAwesomeIcon :icon="byPrefixAndName.fab['instagram']" />
+            </a>
+            <a href="#" class="inline-flex items-center gap-1.5 font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">
+              YouTube <FontAwesomeIcon :icon="byPrefixAndName.fab['youtube']" />
+            </a>
+            <a href="#" class="inline-flex items-center gap-1.5 font-bold text-[.65rem] tracking-[.15em] uppercase text-tan opacity-60 transition-[opacity,color] duration-200 hover:opacity-100 hover:text-orange2">
+              TikTok <FontAwesomeIcon :icon="byPrefixAndName.fab['tiktok']" />
+            </a>
           </div>
         </div>
       </div>
       <div class="tf-right p-6 px-7 border-l-2 border-dashed border-[rgba(176,128,60,.25)] flex flex-col justify-center items-center gap-2">
         <!-- Barcode SVG -->
-        <svg class="opacity-50" width="100" height="55" viewBox="0 0 100 55">
+        <!-- <svg class="opacity-50" width="100" height="55" viewBox="0 0 100 55">
           <rect width="100" height="55" fill="none"/>
           <rect x="2" y="2" width="2" height="42" fill="var(--color-cream)"/>
           <rect x="6" y="2" width="1" height="42" fill="var(--color-cream)"/>
@@ -48,7 +54,7 @@
           <rect x="95" y="2" width="1" height="42" fill="var(--color-cream)"/>
           <rect x="98" y="2" width="2" height="42" fill="var(--color-cream)"/>
           <text x="50" y="53" text-anchor="middle" fill="var(--color-cream)" font-size="7" font-family="monospace" opacity=".7">KREASI 2025 ← 1 DEKADE →</text>
-        </svg>
+        </svg> -->
         <div class="font-type text-[.55rem] tracking-[.2em] uppercase text-tan opacity-60">1 DEKADE, 1 RUMAH, 1 CERITA</div>
       </div>
     </div>
@@ -59,4 +65,18 @@
 </template>
 
 <script setup>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faInstagram, faYoutube, faTiktok } from '@fortawesome/free-brands-svg-icons'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
+
+const byPrefixAndName = {
+  fas: {
+    house: faHouse
+  },
+  fab: {
+    instagram: faInstagram,
+    youtube: faYoutube,
+    tiktok: faTiktok
+  }
+}
 </script>

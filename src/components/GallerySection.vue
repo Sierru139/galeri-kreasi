@@ -65,9 +65,7 @@
               />
               <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
                 <div class="w-12 h-12 rounded-full bg-orange/95 text-black flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
-                  <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 ml-0.5">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+                  <FontAwesomeIcon :icon="faPlay" class="w-6 h-6 ml-0.5" />
                 </div>
               </div>
             </div>
@@ -86,7 +84,7 @@
             <div class="g-overlay absolute inset-0 bg-[rgba(15,10,0,.75)] opacity-0 transition-opacity duration-300 flex flex-col items-center justify-center gap-1.5 z-20">
               <div class="font-bang text-[1.5rem] text-orange2">{{ item.year }}</div>
               <div class="font-hand text-[.8rem] text-cream2 opacity-85">
-                {{ item.type === 'logo' ? 'Logo Angkatan' : (item.type === 'video' ? 'Video Kenangan' : item.caption) }}
+                {{ item.type === 'logo' ? 'Logo Kreasi Angkatan' : (item.type === 'video' ? 'Video Kenangan' : item.caption) }}
               </div>
             </div>
             <div class="font-hand text-[.72rem] text-[#3a2a10] text-center pt-[5px] leading-[1.3]">
@@ -132,9 +130,7 @@
         aria-label="Close Preview"
         @click.stop="closeLightbox"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <FontAwesomeIcon :icon="faXmark" class="w-6 h-6" />
       </button>
 
       <!-- Image/Video Wrapper -->
@@ -181,6 +177,8 @@
 </template>
 
 <script setup>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faPlay, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { ref, computed, watch, onUnmounted } from 'vue'
 import { angkatanData, rotClasses, driveImgUrl } from '../data.js'
 
@@ -270,7 +268,7 @@ const galleryItems = computed(() => {
             type: 'video',
             year: y.year,
             id: vid.id,
-            caption: vid.name || `Angkatan ${y.year} · video ${idx + 1}`
+            caption: `Angkatan ${y.year}`
           })
         })
       }

@@ -62,9 +62,7 @@
         aria-label="Tutup Foto"
         @click.stop="closeTimelineModal"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <FontAwesomeIcon :icon="faXmark" class="w-6 h-6" />
       </button>
 
       <!-- Photo Wrapper -->
@@ -106,6 +104,8 @@
 </template>
 
 <script setup>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { ref, watch, onUnmounted } from 'vue'
 import { angkatanData, driveImgUrl } from '../data.js'
 
