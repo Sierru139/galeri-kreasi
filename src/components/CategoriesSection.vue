@@ -14,7 +14,7 @@
         <div
           v-for="y in angkatanData"
           :key="y.year"
-          class="angkatan-card group bg-paper p-4 text-center cursor-pointer block border border-[rgba(0,0,0,.2)] shadow-[3px_3px_10px_rgba(0,0,0,.5)] transition-[transform,box-shadow] duration-[.25s] ease-in-out hover:-translate-y-1.5 hover:-rotate-1 hover:shadow-[5px_8px_20px_rgba(0,0,0,.7)]"
+          class="group bg-paper p-4 text-center cursor-pointer block border border-[rgba(0,0,0,.2)] shadow-[3px_3px_10px_rgba(0,0,0,.5)] transition-[transform,box-shadow] duration-[.25s] ease-in-out hover:-translate-y-1.5 hover:-rotate-1 hover:shadow-[5px_8px_20px_rgba(0,0,0,.7)]"
           :data-year="y.year"
           @click="openLogoModal(y)"
         >

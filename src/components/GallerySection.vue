@@ -99,6 +99,49 @@
         </div>
       </div>
 
+      <!-- Pagination Controls -->
+      <div v-if="!isFetching && totalPages > 1" class="flex items-center justify-center gap-2 mt-8 mb-4 flex-wrap reveal">
+        <!-- Previous Button -->
+        <button
+          :disabled="currentPage === 1"
+          class="font-bold text-[.7rem] tracking-[.12em] uppercase cursor-pointer transition-all duration-200 rounded-[1px] py-2 px-[1.1rem] disabled:opacity-30 disabled:cursor-not-allowed bg-transparent border-[1.5px] border-[rgba(176,128,60,.35)] text-tan enabled:hover:border-orange enabled:hover:text-orange2"
+          @click="prevPage"
+        >
+          Sebelumnya
+        </button>
+
+        <!-- Page Numbers -->
+        <template v-for="p in pageNumbers" :key="p">
+          <span
+            v-if="p === '...'"
+            class="px-2 font-bold text-tan opacity-50 select-none font-type text-[.8rem]"
+          >
+            ...
+          </span>
+          <button
+            v-else
+            :class="[
+              'font-bold text-[.7rem] tracking-[.12em] uppercase cursor-pointer transition-all duration-200 rounded-[1px] py-2 px-[1.1rem]',
+              currentPage === p
+                ? 'bg-orange border-[1.5px] border-orange text-black'
+                : 'bg-transparent border-[1.5px] border-[rgba(176,128,60,.35)] text-tan hover:border-orange hover:text-orange2'
+            ]"
+            @click="setPage(p)"
+          >
+            {{ p }}
+          </button>
+        </template>
+
+        <!-- Next Button -->
+        <button
+          :disabled="currentPage === totalPages"
+          class="font-bold text-[.7rem] tracking-[.12em] uppercase cursor-pointer transition-all duration-200 rounded-[1px] py-2 px-[1.1rem] disabled:opacity-30 disabled:cursor-not-allowed bg-transparent border-[1.5px] border-[rgba(176,128,60,.35)] text-tan enabled:hover:border-orange enabled:hover:text-orange2"
+          @click="nextPage"
+        >
+          Selanjutnya
+        </button>
+      </div>
+
       <p
         v-if="!isFetching && filteredYears.length === 0"
         class="font-hand text-[.95rem] text-tan opacity-70 text-center mt-6"
@@ -241,7 +284,7 @@ const filteredYears = computed(() => {
   return angkatanData.filter(y => String(y.year) === props.activeFilter)
 })
 
-const galleryItems = computed(() => {
+const allGalleryItems = computed(() => {
   if (props.activeFilter === 'all') {
     const items = []
     filteredYears.value.forEach(y => {
@@ -313,6 +356,78 @@ const galleryItems = computed(() => {
 
     return items
   }
+})
+
+const currentPage = ref(1)
+const itemsPerPage = 20
+
+const totalPages = computed(() => {
+  return Math.ceil(allGalleryItems.value.length / itemsPerPage)
+})
+
+const galleryItems = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  const end = start + itemsPerPage
+  return allGalleryItems.value.slice(start, end)
+})
+
+const pageNumbers = computed(() => {
+  const current = currentPage.value
+  const total = totalPages.value
+  if (total <= 7) {
+    return Array.from({ length: total }, (_, i) => i + 1)
+  }
+  
+  const pages = []
+  pages.push(1)
+  
+  if (current > 3) {
+    pages.push('...')
+  }
+  
+  const start = Math.max(2, current - 1)
+  const end = Math.min(total - 1, current + 1)
+  
+  for (let i = start; i <= end; i++) {
+    pages.push(i)
+  }
+  
+  if (current < total - 2) {
+    pages.push('...')
+  }
+  
+  pages.push(total)
+  return pages
+})
+
+function setPage(p) {
+  currentPage.value = p
+  scrollToGallery()
+}
+
+function prevPage() {
+  if (currentPage.value > 1) {
+    currentPage.value--
+    scrollToGallery()
+  }
+}
+
+function nextPage() {
+  if (currentPage.value < totalPages.value) {
+    currentPage.value++
+    scrollToGallery()
+  }
+}
+
+function scrollToGallery() {
+  const el = document.getElementById('gallery')
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+watch(() => props.activeFilter, () => {
+  currentPage.value = 1
 })
 
 function setFilter(f) {

@@ -54,13 +54,13 @@
           </div>
 
           <!-- Vintage stamp "Since 2015" -->
-          <div class="about-stamp reveal rotate-[-8deg] inline-block mb-8">
+          <!-- <div class="about-stamp reveal rotate-[-8deg] inline-block mb-8">
             <div class="stamp-inner">
               <div class="font-bang text-[.65rem] tracking-[.25em] uppercase">ESTABLISHED</div>
               <div class="font-bang text-[1.6rem] leading-none tracking-[.08em]">2015</div>
               <div class="font-type text-[.5rem] tracking-[.15em] uppercase mt-0.5">SISFO · FST · UINAM</div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Polaroid photo with tape -->
           <div class="relative reveal mt-4 hidden md:block">
