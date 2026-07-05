@@ -23,14 +23,14 @@
               <div class="tl-tooltip absolute bottom-[calc(100%+12px)] left-1/2 -translate-x-1/2 bg-[rgba(20,15,5,.95)] border border-[rgba(176,128,60,.4)] py-2 px-3 rounded-[2px] font-hand text-[.75rem] text-cream2 whitespace-nowrap pointer-events-none opacity-0 transition-opacity duration-200 z-30">{{ y.tooltip }}</div>
               <div class="tl-polaroid bg-cream2 p-[6px_6px_24px] shadow-[2px_4px_12px_rgba(0,0,0,.7),0_0_0_1px_rgba(0,0,0,.4)] -rotate-2 transition-[transform,box-shadow] duration-300">
                 <img
-                  :class="y.photo ? 'md:w-[190px] md:h-[170px] w-[150px] h-[120px] object-cover sepia-[.45] contrast-[1.1]' : 'w-[90px] h-[70px] object-contain bg-[#211a0e] p-2.5'"
+                  :class="(y.timelinePhoto || y.photo) ? 'md:w-[190px] md:h-[170px] w-[150px] h-[120px] object-cover sepia-[.45] contrast-[1.1]' : 'w-[90px] h-[70px] object-contain bg-[#211a0e] p-2.5'"
                   loading="lazy"
-                  :src="driveImgUrl(y.photo || y.logo, 180)"
+                  :src="driveImgUrl(y.timelinePhoto || y.photo || y.logo, 180)"
                   :alt="String(y.year)"
                   referrerpolicy="no-referrer"
-                  @error="e => e.target.src = `https://drive.google.com/thumbnail?id=${y.photo || y.logo}&sz=w180`"
+                  @error="e => e.target.src = `https://drive.google.com/thumbnail?id=${y.timelinePhoto || y.photo || y.logo}&sz=w180`"
                 >
-                <div v-if="y.photo" class="absolute bottom-[21px] right-px z-6 md:w-[50px] md:h-[50px] w-[40px] h-[40px] rounded-full bg-white shadow-[0_1px_5px_rgba(0,0,0,.6)] overflow-hidden">
+                <div v-if="y.timelinePhoto || y.photo" class="absolute bottom-[21px] right-px z-6 md:w-[50px] md:h-[50px] w-[40px] h-[40px] rounded-full bg-white shadow-[0_1px_5px_rgba(0,0,0,.6)] overflow-hidden">
                   <img
                     :src="driveImgUrl(y.logo, 80)"
                     :alt="'Logo ' + y.year"
@@ -70,10 +70,10 @@
         <div class="relative max-w-full max-h-[80vh] inline-block">
           <!-- The Photo / Image -->
           <img 
-            :src="driveImgUrl(selectedTimeline.photo || selectedTimeline.logo, 1200)" 
+            :src="driveImgUrl(selectedTimeline.timelinePhoto || selectedTimeline.photo || selectedTimeline.logo, 1200)" 
             :alt="'Foto Angkatan ' + selectedTimeline.year"
             class="max-w-full max-h-[80vh] object-contain rounded border border-white/10 shadow-2xl bg-black"
-            @error="e => { if (selectedTimeline) e.target.src = `https://drive.google.com/thumbnail?id=${selectedTimeline.photo || selectedTimeline.logo}&sz=w1200` }"
+            @error="e => { if (selectedTimeline) e.target.src = `https://drive.google.com/thumbnail?id=${selectedTimeline.timelinePhoto || selectedTimeline.photo || selectedTimeline.logo}&sz=w1200` }"
           />
 
           <!-- Overlaid batch logo in bottom-right corner (designed like a printed logo stamp) -->

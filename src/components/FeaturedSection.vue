@@ -184,7 +184,7 @@
             <div class="about-accent-note bg-[#a05828] py-3.5 px-5 rotate-1 shadow-[3px_3px_10px_rgba(0,0,0,.5)] max-w-[320px] ml-auto relative">
               <div class="tape tr" style="width:50px; height:15px; right:15px; top:-8px;"></div>
               <p class="font-hand text-[.88rem] text-[#f8e0b0] leading-[1.65]">
-                "Satu dekade, sebelas angkatan, satu cerita panjang yang sama. Ini baru halaman pertama." ✎
+                "Satu dekade, sebelas angkatan, satu cerita panjang yang sama. Ini baru halaman pertama."
               </p>
             </div>
           </div>

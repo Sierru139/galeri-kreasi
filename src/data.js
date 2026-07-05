@@ -2,18 +2,19 @@ import { reactive } from 'vue'
 
 // ── FALLBACK BACKUP ANGKATAN DATA ──
 // Used as initial state and when the Google Drive API fetch is not active or fails.
+// Note: You can manually override the timeline Polaroid image by adding: timelinePhoto: 'GOOGLE_DRIVE_FILE_ID'
 export const fallbackAngkatanData = [
-  { year: 2015, desc: 'CERITA LAMA MELENGKAPI CERITA CERITA YANG PERNAH ADA', tooltip: 'Awal perjalanan KREASI dimulai', logo: '1fWN8Wp4AnisnKC5lVm7qnLUXbT-JiV2U', photo: null },
+  { year: 2015, desc: 'CERITA LAMA MELENGKAPI CERITA CERITA YANG PERNAH ADA', tooltip: 'Awal perjalanan KREASI dimulai', logo: '1fWN8Wp4AnisnKC5lVm7qnLUXbT-JiV2U', photo: null, timelinePhoto: '1CWBHUcUQ3iJEgCKYXa5o_edDVZ0EYl_r' },
   { year: 2016, desc: 'MENYATUKAN CERITA DALAM DEBAR HARMONI', tooltip: 'Langkah baru menuju yang lebih baik', logo: '1WrkS_YJ46w7N-TSLV9FeZbESv82N8ni7', photo: '1w7bVYUY0DOHG-Y33rba99MW12IzkxKcU' },
-  { year: 2017, desc: 'ALEA JACTA EST', tooltip: 'Kami tumbuh bersama lebih kuat', logo: '1Y9TU_9whwoeFnimYEw3knB-SmuTeq3_E', photo: '1WuJs3BXW0-Ym-8NXGci8RPNr5kWZC5UU' },
-  { year: 2018, desc: 'KUMPULAN CERITA TERKESAN CANGGIH DALAM BINGKAI PERSAUDARAAN', tooltip: 'Semakin kuat, semakin solid', logo: '1AR0qbs1uDeYCKTJlCOS8v_JHGRuPVSZ0', photo: null },
-  { year: 2019, desc: 'SATUKAN PERBEDAAN ABADIKAN KEBERSAMAAN', tooltip: 'Banyak cerita baru tercipta', logo: '1r2lxGdmP_FE6JF2FXuNmV2fnYxK4Bcru', photo: null },
+  { year: 2017, desc: 'ALEA JACTA EST', tooltip: 'Kami tumbuh bersama lebih kuat', logo: '1Y9TU_9whwoeFnimYEw3knB-SmuTeq3_E', photo: '1WuJs3BXW0-Ym-8NXGci8RPNr5kWZC5UU', },
+  { year: 2018, desc: 'KUMPULAN CERITA TERKESAN CANGGIH DALAM BINGKAI PERSAUDARAAN', tooltip: 'Semakin kuat, semakin solid', logo: '1AR0qbs1uDeYCKTJlCOS8v_JHGRuPVSZ0', photo: null, timelinePhoto: '1CWBHUcUQ3iJEgCKYXa5o_edDVZ0EYl_r' },
+  { year: 2019, desc: 'SATUKAN PERBEDAAN ABADIKAN KEBERSAMAAN', tooltip: 'Banyak cerita baru tercipta', logo: '1r2lxGdmP_FE6JF2FXuNmV2fnYxK4Bcru', photo: null, timelinePhoto: '1bE5YB3ug-KYpb9YVTPb_h1eidyBcn2dJ' },
   { year: 2020, desc: 'MERAJUT TALI PERSAUDARAAN MELALUI KISAH KLASIK', tooltip: 'Bertahan & belajar di masa sulit', logo: '1wMv-m8Yg1i3D_wm5HJeHh1fR3baNuJEd', photo: '1RNvUlpizxwdlcpBUCoS08urUS7pMj-0L' },
   { year: 2021, desc: 'MY STORY YOUR STORY OUR STORY', tooltip: 'Bangkit kembali lebih bersemangat', logo: '1WrgVeago4XbJAcIg4mhUG_oKqx1mmGS6', photo: '1xS4MwcBQCSj7spPARC1RjbyIyyjyX-cN' },
   { year: 2022, desc: 'MELANGKAH, MENYATU, DALAM KEBERANIAN', tooltip: 'Lebih dari biasanya, lebih bermakna', logo: '1_kJguf2FXRxE0GllauHl6x-rkQTeynsJ', photo: '1CKqN100IpsQn3XDUoa5gFfgD9SoEETvz' },
   { year: 2023, desc: 'MENYATUKAN SEMUA CAHAYA DEMI MIMPI BERASAMA', tooltip: 'Tahun yang penuh warna dan cerita', logo: '1NXhMgif8gaVE33wJad5SdIqkrHCZ5R7x', photo: '1JVbeyBbGCxJZvBkHm6xHu3ec40PWYZ3E' },
   { year: 2024, desc: 'TERIKAT DALAM SATU ARAH', tooltip: 'Persiapan menyambut satu dekade', logo: '12LIBf-7d63EWqeA7CdMGW7qgcMKhGdPc', photo: '14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun' },
-  { year: 2025, desc: '1 DEKADE, 1 RUMAH, 1 CERITA', tooltip: '1 Dekade, 1 Rumah, 1 Cerita', logo: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', photo: null, active: true, fallbackVideos: [{ id: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', name: 'Closing KREASI 2025.mp4', mimeType: 'video/mp4' }] },
+  { year: 2025, desc: '1 DEKADE, 1 RUMAH, 1 CERITA', tooltip: '1 Dekade, 1 Rumah, 1 Cerita', logo: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', photo: '17iZ9FCOJTgFmBrx2JKaZdND8PvYmFj9P', timelinePhoto: '17iZ9FCOJTgFmBrx2JKaZdND8PvYmFj9P', active: true, fallbackVideos: [{ id: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', name: 'Closing KREASI 2025.mp4', mimeType: 'video/mp4' }] },
 ]
 
 // Reactive array exported for all components to consume directly
