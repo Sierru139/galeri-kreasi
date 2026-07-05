@@ -25,10 +25,10 @@
                 <img
                   :class="(y.timelinePhoto || y.photo) ? 'md:w-[190px] md:h-[170px] w-[150px] h-[120px] object-cover sepia-[.45] contrast-[1.1]' : 'w-[90px] h-[70px] object-contain bg-[#211a0e] p-2.5'"
                   loading="lazy"
-                  :src="driveImgUrl(y.timelinePhoto || y.photo || y.logo, 180)"
+                  :src="driveImgUrl(y.timelinePhoto || y.photo || y.logo, 500)"
                   :alt="String(y.year)"
                   referrerpolicy="no-referrer"
-                  @error="e => e.target.src = `https://drive.google.com/thumbnail?id=${y.timelinePhoto || y.photo || y.logo}&sz=w180`"
+                  @error="e => e.target.src = `https://drive.google.com/thumbnail?id=${y.timelinePhoto || y.photo || y.logo}&sz=w500`"
                 >
                 <div v-if="y.timelinePhoto || y.photo" class="absolute bottom-[21px] right-px z-6 md:w-[50px] md:h-[50px] w-[40px] h-[40px] rounded-full bg-white shadow-[0_1px_5px_rgba(0,0,0,.6)] overflow-hidden">
                   <img
@@ -78,12 +78,12 @@
 
           <!-- Overlaid batch logo in bottom-right corner (designed like a printed logo stamp) -->
           <div 
-            class="absolute bottom-4 right-4 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/90 border-2 border-white shadow-[0_2px_12px_rgba(0,0,0,0.6)] overflow-hidden flex items-center justify-center p-1.5 select-none pointer-events-none transition-transform duration-300 hover:scale-110"
+            class="absolute bottom-4 right-4 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/90 border-2 border-white shadow-[0_2px_12px_rgba(0,0,0,0.6)] overflow-hidden flex items-center justify-center select-none pointer-events-none transition-transform duration-300 hover:scale-110"
           >
             <img 
               :src="driveImgUrl(selectedTimeline.logo, 160)" 
               :alt="'Logo ' + selectedTimeline.year"
-              class="w-full h-full object-contain"
+              class="w-full h-full object-cover"
               @error="e => { if (selectedTimeline) e.target.src = `https://drive.google.com/thumbnail?id=${selectedTimeline.logo}&sz=w160` }"
             />
           </div>
@@ -96,7 +96,7 @@
           ANGKATAN {{ selectedTimeline.year }}
         </span>
         <p class="font-hand text-lg md:text-xl text-cream2/90 leading-relaxed italic">
-          {{ selectedTimeline.tooltip }}
+          {{ selectedTimeline.desc }}
         </p>
       </div>
     </div>

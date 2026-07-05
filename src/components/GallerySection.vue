@@ -214,7 +214,16 @@
         <p class="font-hand text-base md:text-lg text-cream2/90 leading-relaxed italic">
           {{ selectedImage.caption }}
         </p>
+        <a 
+            :href="`https://drive.google.com/file/d/${selectedImage.id}/view`" 
+            target="_blank" 
+            rel="noopener" 
+            class="text-[0.8rem] font-hand text-orange hover:text-orange2 underline transition-colors cursor-pointer"
+          >
+            Buka di Google Drive di tab baru ↗
+          </a>
       </div>
+      
     </div>
   </Transition>
 </template>

@@ -11,9 +11,9 @@ export const fallbackAngkatanData = [
   { year: 2019, desc: 'SATUKAN PERBEDAAN ABADIKAN KEBERSAMAAN', tooltip: 'Banyak cerita baru tercipta', logo: '1r2lxGdmP_FE6JF2FXuNmV2fnYxK4Bcru', photo: null, timelinePhoto: '1bE5YB3ug-KYpb9YVTPb_h1eidyBcn2dJ' },
   { year: 2020, desc: 'MERAJUT TALI PERSAUDARAAN MELALUI KISAH KLASIK', tooltip: 'Bertahan & belajar di masa sulit', logo: '1wMv-m8Yg1i3D_wm5HJeHh1fR3baNuJEd', photo: '1RNvUlpizxwdlcpBUCoS08urUS7pMj-0L' },
   { year: 2021, desc: 'MY STORY YOUR STORY OUR STORY', tooltip: 'Bangkit kembali lebih bersemangat', logo: '1WrgVeago4XbJAcIg4mhUG_oKqx1mmGS6', photo: '1xS4MwcBQCSj7spPARC1RjbyIyyjyX-cN' },
-  { year: 2022, desc: 'MELANGKAH, MENYATU, DALAM KEBERANIAN', tooltip: 'Lebih dari biasanya, lebih bermakna', logo: '1_kJguf2FXRxE0GllauHl6x-rkQTeynsJ', photo: '1CKqN100IpsQn3XDUoa5gFfgD9SoEETvz' },
+  { year: 2022, desc: 'MELANGKAH, MENYATU, DALAM KEBERANIAN', tooltip: 'Lebih dari biasanya, lebih bermakna', logo: '1_kJguf2FXRxE0GllauHl6x-rkQTeynsJ', photo: '1CKqN100IpsQn3XDUoa5gFfgD9SoEETvz', timelinePhoto: '1-yrBdr9nfm0c6aPFv-SzkxXCP2MBu8CP' },
   { year: 2023, desc: 'MENYATUKAN SEMUA CAHAYA DEMI MIMPI BERASAMA', tooltip: 'Tahun yang penuh warna dan cerita', logo: '1NXhMgif8gaVE33wJad5SdIqkrHCZ5R7x', photo: '1JVbeyBbGCxJZvBkHm6xHu3ec40PWYZ3E' },
-  { year: 2024, desc: 'TERIKAT DALAM SATU ARAH', tooltip: 'Persiapan menyambut satu dekade', logo: '12LIBf-7d63EWqeA7CdMGW7qgcMKhGdPc', photo: '14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun' },
+  { year: 2024, desc: 'TERIKAT DALAM SATU ARAH', tooltip: 'Persiapan menyambut satu dekade', logo: '12LIBf-7d63EWqeA7CdMGW7qgcMKhGdPc', photo: '14Go5GI-DdnUPAgxaYp8Y4E0ksaDIfmun', timelinePhoto: '1thDhqx0KaU_GnfR9d8DFQpW5GnFZWisM' },
   { year: 2025, desc: '1 DEKADE, 1 RUMAH, 1 CERITA', tooltip: '1 Dekade, 1 Rumah, 1 Cerita', logo: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', photo: '17iZ9FCOJTgFmBrx2JKaZdND8PvYmFj9P', timelinePhoto: '17iZ9FCOJTgFmBrx2JKaZdND8PvYmFj9P', active: true, fallbackVideos: [{ id: '1MzTxTGCgseyWJIqt4aYIZLWOK_4bqzYk', name: 'Closing KREASI 2025.mp4', mimeType: 'video/mp4' }] },
 ]
 
